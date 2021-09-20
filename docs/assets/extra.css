@@ -1,0 +1,206 @@
+/* general */
+:root > * {
+    --md-code-hl-color: rgba(255, 255, 0, 0.2);
+    --md-typeset-mark-color: var(--md-code-hl-color);
+}
+.md-logo {
+    color: orangered;
+}
+.md-grid {
+    max-width: 71rem;
+}
+/* fade sidebar */
+@media screen and (min-width: 76.1875em) {
+    .md-sidebar {
+        opacity: 0.2;
+    }
+    .md-sidebar:hover {
+        opacity: 1;
+    }
+}
+/* footer */
+.md-footer {
+    color: unset;
+    background-color: unset;
+}
+.md-footer-meta {
+    background-color: black;
+}
+/* header */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    color: orangered;
+}
+.md-typeset h1 {
+    font-size: 2.2em;
+}
+.md-typeset h2 {
+    font-size: 1.75em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid whitesmoke;
+}
+.md-typeset h3 {
+    font-size: 1.5em;
+}
+.md-typeset h4 {
+    font-size: 1.25em;
+    font-weight: normal;
+}
+/* paragraph */
+.md-typeset p {
+    text-align: justify;
+}
+.md-typeset em {
+    color: magenta;
+}
+.md-typeset .big {
+    font-size: larger;
+}
+.md-typeset .small {
+    font-size: smaller;
+}
+.md-typeset .bold {
+    font-weight: bold;
+}
+/* block */
+.md-typeset blockquote a {
+    color: blueviolet;
+}
+.md-typeset blockquote {
+    border-left: 2px solid lightgray;
+}
+/* code block */
+.md-typeset code {
+    color: darkred;
+    background-color: rgba(0, 0, 0, 0.01);
+}
+.md-typeset pre code {
+    white-space: pre-wrap;
+}
+.highlight .linenos {
+    padding-right: 1em;
+    color: lightgray;
+}
+/* tabs */
+.md-typeset .tabbed-content {
+    box-shadow: none;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+.md-typeset .tabbed-content > p {
+    padding-left: 1em;
+}
+.md-typeset .tabbed-set > input:checked + label {
+    border-color: unset;
+    color: unset;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+.md-typeset .tabbed-set > label {
+    padding: 0.25em 0.5em;
+    font-size: unset;
+    font-weight: unset;
+}
+.md-typeset .tabbed-content > .tabbed-set {
+    padding-left: 1em;
+}
+/* callout */
+.md-typeset .admonition,
+.md-typeset details {
+    background-color: unset;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: unset;
+}
+.md-typeset .admonition > *:not(.admonition-title),
+.md-typeset details > *:not(summary) {
+    padding-left: 1.2em;
+}
+.md-typeset .admonition-title,
+.md-typeset summary {
+    background-color: unset !important;
+    border: none;
+    padding-left: 1.7em;
+}
+.md-typeset .admonition-title:before,
+.md-typeset summary:before {
+    height: 1.2em;
+    width: 1.2em;
+    left: 0.2em;
+}
+.md-typeset .admonition > .admonition-title + *,
+.md-typeset details > summary + * {
+    margin-top: 0;
+}
+.md-typeset .admonition.no-title > .admonition-title + *,
+.md-typeset details.no-title > summary + * {
+    margin-top: -2.1em;
+}
+/* progress bar */
+.progress-label {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    line-height: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 1em;
+}
+.progress-bar {
+    height: 1.2rem;
+    float: left;
+    background-color: #2979ff;
+}
+.progress-bar * {
+    margin: 0 !important;
+}
+.progress {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    height: 1.2rem;
+    background-color: #eeeeee;
+    position: relative;
+}
+.progress.thin {
+    margin-top: 0.9rem;
+    height: 0.4rem;
+}
+.progress.thin .progress-label {
+    margin-top: -0.4rem;
+}
+.progress.thin .progress-bar {
+    height: 0.4rem;
+}
+.progress-100plus .progress-bar {
+    background-color: #00e676;
+}
+.progress-80plus .progress-bar {
+    background-color: #fbc02d;
+}
+.progress-60plus .progress-bar {
+    background-color: #ff9100;
+}
+.progress-40plus .progress-bar {
+    background-color: #ff5252;
+}
+.progress-20plus .progress-bar {
+    background-color: #ff1744;
+}
+.progress-0plus .progress-bar {
+    background-color: #f50057;
+}
+/* print */
+@page {
+    size: a4 portrait;
+    margin: 25mm 15mm 25mm 20mm;
+}
+@media print {
+    .md-typeset .tabbed-set > label {
+        border-width: 0;
+        background-color: unset !important;
+        color: unset !important;
+    }
+}
