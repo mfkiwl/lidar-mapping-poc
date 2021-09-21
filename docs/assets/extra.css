@@ -55,6 +55,9 @@
 .md-typeset em {
     color: magenta;
 }
+.md-typeset em.noem {
+    color: unset;
+}
 .md-typeset .big {
     font-size: larger;
 }
@@ -71,6 +74,28 @@
 .md-typeset blockquote {
     border-left: 2px solid lightgray;
 }
+/* terminal */
+.md-typeset .terminal + .highlight [data-linenos]:before {
+    content: "$";
+}
+/* file */
+.md-typeset .file + p {
+    font-size: 0.9em;
+    color: gray;
+    margin-bottom: -1.2em;
+}
+/* log */
+.md-typeset .log {
+    margin-bottom: -1em;
+}
+.md-typeset .log + .highlight code {
+    font-size: small;
+    color: unset;
+    opacity: 0.8;
+}
+.md-typeset .log + .highlight .md-clipboard.md-icon {
+    display: none;
+}
 /* code block */
 .md-typeset code {
     color: darkred;
@@ -78,10 +103,12 @@
 }
 .md-typeset pre code {
     white-space: pre-wrap;
+    word-break: break-word;
 }
-.highlight .linenos {
-    padding-right: 1em;
+.md-typeset .highlight [data-linenos]:before {
+    background-color: unset;
     color: lightgray;
+    box-shadow: none;
 }
 /* tabs */
 .md-typeset .tabbed-content {
@@ -116,19 +143,19 @@
 }
 .md-typeset .admonition > *:not(.admonition-title),
 .md-typeset details > *:not(summary) {
-    padding-left: 1.2em;
+    padding-left: 1rem;
 }
 .md-typeset .admonition-title,
 .md-typeset summary {
     background-color: unset !important;
     border: none;
-    padding-left: 1.7em;
+    padding-left: 1.7rem;
 }
 .md-typeset .admonition-title:before,
 .md-typeset summary:before {
-    height: 1.2em;
-    width: 1.2em;
-    left: 0.2em;
+    height: 1.2rem;
+    width: 1.2rem;
+    left: 0.2rem;
 }
 .md-typeset .admonition > .admonition-title + *,
 .md-typeset details > summary + * {
@@ -202,5 +229,17 @@
         border-width: 0;
         background-color: unset !important;
         color: unset !important;
+    }
+    .md-typeset #__comments,
+    .md-typeset #disqus_recommendations,
+    .md-typeset #disqus_thread {
+        display: none;
+    }
+    .md-typeset .admonition,
+    .md-typeset details {
+        page-break-inside: auto;
+    }
+    .md-typeset figure {
+        page-break-inside: avoid;
     }
 }

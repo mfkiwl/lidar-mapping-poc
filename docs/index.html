@@ -56,6 +56,8 @@
     
     
     
+      <link rel="stylesheet" href="assets/view-bigimg.css">
+    
       <link rel="stylesheet" href="assets/extra.css">
     
     
@@ -182,7 +184,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
-    GitHub
+    vuquangtrong/lidar-mapping-poc
   </div>
 </a>
       </div>
@@ -225,7 +227,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
-    GitHub
+    vuquangtrong/lidar-mapping-poc
   </div>
 </a>
     </div>
@@ -291,8 +293,53 @@
   
   
     <li class="md-nav__item">
+      <a href="reference/" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design/" class="md-nav__link">
+        System design
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="components/" class="md-nav__link">
         Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gnss-emulator/" class="md-nav__link">
+        GNSS emulator
       </a>
     </li>
   
@@ -344,9 +391,45 @@
         <p class="page-description">This project aims to make a high precesion Lidar Mapping system using GNSS and IMU.</p>
         <br>
         <hr>
-        <h2 id="task-list">Task List<a class="headerlink" href="#task-list" title="Permanent link">⚓︎</a></h2>
+        <style>
+    a {
+        color: black !important;
+    }
+</style>
+
+<h2 id="task-list">Task List<a class="headerlink" href="#task-list" title="Permanent link">⚓︎</a></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="components/"><div class="progress progress-80plus bold"><div class="progress-bar" style="width:80.00%"><p class="progress-label">Get components</p></div></div></a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="reference/"><div class="progress progress-100plus bold"><div class="progress-bar" style="width:100.00%"><p class="progress-label">Study reference project</p></div></div></a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Analyze hardware components</p>
+</div>
+</div>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Analyze software source code</p>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="design/"><div class="progress progress-40plus bold"><div class="progress-bar" style="width:50.00%"><p class="progress-label">Design system architecture</p></div></div></a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Hardware block diagram</p>
+</div>
+</div>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
+<div class="progress-bar" style="width:0.00%">
+<p class="progress-label">Software architecture</p>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="components/"><div class="progress progress-80plus bold"><div class="progress-bar" style="width:80.00%"><p class="progress-label">Get hardware components</p></div></div></a><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
 <div class="progress-bar" style="width:100.00%">
 <p class="progress-label">Rover's parts</p>
@@ -361,11 +444,17 @@
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-60plus">
 <div class="progress-bar" style="width:60.00%">
-<p class="progress-label">Other stuff for developement</p>
+<p class="progress-label">Other stuffs for development</p>
 </div>
 </div>
 </li>
 </ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus bold">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Gather documents</p>
+</div>
+</div>
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus bold">
 <div class="progress-bar" style="width:0.00%">
@@ -375,25 +464,51 @@
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">GNSS Emulator</p>
+<p class="progress-label">Hardware work</p>
 </div>
 </div>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput PPS</p>
+<p class="progress-label">Power supply</p>
 </div>
 </div>
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput GPRMC</p>
+<p class="progress-label">Component wiring</p>
 </div>
 </div>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
-<div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput GNGGA</p>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">GNSS Emulator</p>
+</div>
+</div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Output PPS</p>
+</div>
+</div>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Output GPRMC</p>
+</div>
+</div>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Output GNGGA</p>
+</div>
+</div>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <div class="progress progress-100plus">
+<div class="progress-bar" style="width:100.00%">
+<p class="progress-label">Output OBSVMA</p>
 </div>
 </div>
 </li>
@@ -521,7 +636,7 @@
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Read GNSS poistion and extract timestamp</p>
+<p class="progress-label">Read GNSS position and extract timestamp</p>
 </div>
 </div>
 </li>
@@ -559,7 +674,7 @@
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput systems status</p>
+<p class="progress-label">Output systems status</p>
 </div>
 </div>
 <ul class="task-list">
@@ -571,7 +686,7 @@
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput system status to OLED</p>
+<p class="progress-label">Output system status to OLED</p>
 </div>
 </div>
 </li>
@@ -617,6 +732,26 @@
 </div>
 </div>
 <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
+<div class="progress-bar" style="width:0.00%">
+<p class="progress-label">Hardware work</p>
+</div>
+</div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
+<div class="progress-bar" style="width:0.00%">
+<p class="progress-label">Power supply</p>
+</div>
+</div>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
+<div class="progress-bar" style="width:0.00%">
+<p class="progress-label">Component wiring</p>
+</div>
+</div>
+</li>
+</ul>
+</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus bold">
 <div class="progress-bar" style="width:0.00%">
 <p class="progress-label">Implement Base application on Raspberry Pi 3 B+</p>
@@ -683,7 +818,7 @@
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput systems status</p>
+<p class="progress-label">Output systems status</p>
 </div>
 </div>
 <ul class="task-list">
@@ -695,7 +830,7 @@
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <div class="progress progress-0plus">
 <div class="progress-bar" style="width:0.00%">
-<p class="progress-label">Ouput system status to OLED</p>
+<p class="progress-label">Output system status to OLED</p>
 </div>
 </div>
 </li>
@@ -757,13 +892,13 @@
       
       
         
-        <a href="components/" class="md-footer__link md-footer__link--next" aria-label="Next: Components" rel="next">
+        <a href="reference/" class="md-footer__link md-footer__link--next" aria-label="Next: Reference" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Components
+              Reference
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -818,6 +953,10 @@
     
     
       <script src="assets/javascripts/bundle.48dfec6c.min.js"></script>
+      
+        <script src="assets/view-bigimg.js"></script>
+      
+        <script src="assets/extra.js"></script>
       
     
   </body>

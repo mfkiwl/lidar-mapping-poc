@@ -16,21 +16,21 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="List of components needed for developement.">
+        <meta name="description" content="This describes the hardware block diagram and Software archtecture for a Lidar Mapping system.">
       
       
       
         <meta name="author" content="vqtrong">
       
       
-        <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/components/">
+        <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/design/">
       
       <link rel="icon" href="../favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
     
     
       
-        <title>Components - Lidar Mapping (PoC)</title>
+        <title>System design - Lidar Mapping (PoC)</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rover" class="md-skip">
+        <a href="#1-hardware" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Components
+              System design
             
           </span>
         </div>
@@ -270,21 +270,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../design/" class="md-nav__link">
-        System design
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -295,12 +280,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Components
+          System design
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Components
+        System design
       </a>
       
         
@@ -316,22 +301,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rover" class="md-nav__link">
-    Rover
+  <a href="#1-hardware" class="md-nav__link">
+    1. Hardware
   </a>
+  
+    <nav class="md-nav" aria-label="1. Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-block-diagram" class="md-nav__link">
+    1.1. Block diagram
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-power-supply" class="md-nav__link">
+    1.2. Power supply
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#base" class="md-nav__link">
-    Base
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-stuff" class="md-nav__link">
-    Other stuff
+  <a href="#2-software" class="md-nav__link">
+    2. Software
   </a>
   
 </li>
@@ -340,6 +338,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        Components
+      </a>
     </li>
   
 
@@ -383,22 +396,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rover" class="md-nav__link">
-    Rover
+  <a href="#1-hardware" class="md-nav__link">
+    1. Hardware
   </a>
+  
+    <nav class="md-nav" aria-label="1. Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-block-diagram" class="md-nav__link">
+    1.1. Block diagram
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-power-supply" class="md-nav__link">
+    1.2. Power supply
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#base" class="md-nav__link">
-    Base
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-stuff" class="md-nav__link">
-    Other stuff
+  <a href="#2-software" class="md-nav__link">
+    2. Software
   </a>
   
 </li>
@@ -415,318 +441,41 @@
             <article class="md-content__inner md-typeset">
               
     
-        <h1 class="page-title">Components</h1>
-        <p class="page-description">List of components needed for developement.</p>
+        <h1 class="page-title">System design</h1>
+        <p class="page-description">This describes the hardware block diagram and Software archtecture for a Lidar Mapping system.</p>
         <br>
         <hr>
-        <style>
-    .md-typeset .admonition.specs,
-    .md-typeset details.specs {
-        margin: -2rem 0 0 -1.2rem;
-    }
-    .md-typeset .admonition.specs > .admonition-title::before,
-    .md-typeset details.specs > summary::before{
-        visibility: hidden;
-    }
-</style>
-
-<p>The system has 2 main parts:</p>
-<ol>
+        <p>Based on study of a <a href="../reference/">reference project</a> from Livox.</p>
+<h2 id="1-hardware">1. Hardware<a class="headerlink" href="#1-hardware" title="Permanent link">⚓︎</a></h2>
+<p>Refer to the list of <a href="../components/">Components</a>.</p>
+<h3 id="11-block-diagram">1.1. Block diagram<a class="headerlink" href="#11-block-diagram" title="Permanent link">⚓︎</a></h3>
+<p>
+<figure><img src="rover.drawio.svg" /><figcaption>Rover's components</figcaption>
+</figure>
+<figure><img src="base.drawio.svg" /><figcaption>Base's components</figcaption>
+</figure>
+</p>
+<p><strong>Notes</strong>:</p>
+<ul>
 <li>
-<p><strong>Rover</strong> is mounted on an RC Car or Drone to scan an area and map the captured point-cloud.</p>
+<p>All modules, except Livox's, are 3.3 V level, so they are can be connected directly. This helps to ommit USB TTL-to-COM.</p>
 </li>
 <li>
-<p><strong>Base</strong> acts as a stationary point which provide positioning correction to Rover for better accuracy.</p>
+<p>Raspberry Pi 3 B+ has on-board WiFi module</p>
 </li>
-</ol>
-<script>
-var expanded = false;
-function toggleDetails() {
-  expanded = !expanded;
-  self.checked = expanded;
-  var d = document.getElementsByTagName("details");
-  Array.from(d).forEach( function(obj, idx) {
-      obj.open = expanded;
-  });
-  var i = document.querySelectorAll("input.specs");
-  console.log(i)
-  Array.from(i).forEach( function(obj, idx) {
-      obj.checked = expanded;
-  });
-}
-</script>
-
-<h2 id="rover">Rover<a class="headerlink" href="#rover" title="Permanent link">⚓︎</a></h2>
-<p><label><input type="checkbox" class="specs" onclick="toggleDetails()">Show specification</input></label></p>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.livoxtech.com/mid-40-and-mid-100"><strong>Livox Lidar Mid-40</strong></a></p>
-<details class="specs"><summary></summary><ul>
-<li>100,000 points per second</li>
-<li>POV: 38.4° circular</li>
-<li>Upto 260m @ 80% reflectivity</li>
-<li>Livox Converter <strong>1.0</strong>: Power, Ethernet, Sync RS485.
-    &gt; It's better to get Converter 2.0</li>
 </ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://developer.nvidia.com/embedded/jetson-nano-developer-kit"><strong>Jetson Nano Developer Kit</strong></a></p>
-<details class="specs"><summary></summary><ul>
-<li>CPU Quad-core ARM A57 @ 1.43 GHz</li>
-<li>GPU 128-core Maxwell</li>
-<li>RAM 4 GB 64-bit LPDDR4 25.6 GB/s</li>
-<li>Gigabit Ethernet, M.2 Key E</li>
-<li>4x USB 3.0, USB 2.0 Micro-B</li>
-<li>GPIO, I2C, I2S, SPI, UARTs</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>MicroSD Card</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>Should have at least 32 GB at high speed (V30) for saving point louds</p>
-</blockquote>
+<h3 id="12-power-supply">1.2. Power supply<a class="headerlink" href="#12-power-supply" title="Permanent link">⚓︎</a></h3>
+<p>
+<figure><img src="rover_power.drawio.svg" /><figcaption>Rover's power supply</figcaption>
+</figure>
+<figure><img src="base_power.drawio.svg" /><figcaption>Base's power supply</figcaption>
+</figure>
+</p>
+<p><strong>Notes</strong>:</p>
 <ul>
-<li>Sandisk Ultra 16 GB, class 10, SDHC I</li>
+<li>The input voltage of Livox Converter is 10 ~ 16 VDC, therefore, an 1N5400 diode can be connected in serial to reduce voltage to under 16 VDC.</li>
 </ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://en.unicorecomm.com/products/detail/3"><strong>Unicorecomm GNSS UB482</strong></a></p>
-<details class="specs"><summary></summary><ul>
-<li>GPS L1/L2 + BDS B1/B2 + GLONASS L1/ L2 + Galileo E1/E5b + QZSS L1/L2</li>
-<li>Two antennas, support heading</li>
-<li>20 Hz data output rate</li>
-<li>Ethernet, serial port, SPI, 1PPS</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://en.harxon.com/products.php?CateId=41"><strong>Harxon HX-CH7604A antennas</strong></a></p>
-<details class="specs"><summary></summary><ul>
-<li>All-constellation Multi-frequency L1/L2, G1/G2, E1, B1/B2/B3</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>SMA Female to MMCX Male</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>UB482 has <strong>MMCX</strong> (Mini-MCX) Female connector<br />
-HX-CH7604A has SMA Male connector</p>
-</blockquote>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://invensense.tdk.com/products/dk-20789/"><strong>InvenSense DK-20789</strong></a></p>
-<details class="specs"><summary></summary><ul>
-<li>7-axis motion sensor</li>
-<li>Embedded Microchip G55 MCU and debugger</li>
-<li>Embedded Motion Drivers</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Rechargeable Battery</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>16V with 2000 mAh</li>
-<li>Peak current at 4 A</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>DC-DC Converter</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>Except Lidar, all other boards use 5V</li>
-<li>Peak current at 4 A</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>USB WiFi dongle</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>TP-Link WN725N</p>
-</blockquote>
-<ul>
-<li>150Mbps 802.11b/g/n, Internal antenna</li>
-<li>Ad-Hoc / Infrastructure Mode</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>WiFi router</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>No need this component if using a USB WiFi dongle connected to the Jetson board, and Lidar is connected directly with it.</p>
-</blockquote>
-<ul>
-<li>4-port LAN</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 2 x <strong>Ethernet Cable</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>Either connect Lidar to the Router or connect to the Jetson board directly after setting up static IPs on both sides</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>nRF24L01 2.4GHz Transceiver + PA + LNA</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>ISM 2.4GHz, 126 Channels GFSK</li>
-<li>250kbps, 1Mbps và 2Mbps</li>
-<li>SPI interface to host MCU</li>
-<li>PA + LNA for upto 1 Km range</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>USB TTL to RS485</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>No need this component if using Livox Converter <strong>2.0</strong></p>
-</blockquote>
-<ul>
-<li>5V operation, differential voltage &gt;= 200 mV</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 3x <strong>USB TTL to COM</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>No need this component if using on-board UARTs port after reconfiguring OS kernel</p>
-</blockquote>
-<ul>
-<li>3.3V/ 5V to USB COM</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>OLED LCD</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>Show system status without connecting to PC via WiFi</p>
-</blockquote>
-<ul>
-<li>128x64 Monochrome</li>
-<li>I2C interface</li>
-</ul>
-</details>
-</li>
-</ul>
-<h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">⚓︎</a></h2>
-<p><label><input type="checkbox" class="specs" onclick="toggleDetails()">Show specification</input></label></p>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/"><strong>Raspberry Pi 3 B+</strong></a></p>
-<details class="specs"><summary></summary><blockquote>
-<p>This can be repalaced by a MCU as Base only needs to log data and transmit RTCM3 messages</p>
-</blockquote>
-<ul>
-<li>Broadcom BCM2837B0, Cortex-A53 (ARMv8) 64-bit SoC @ 1.4GHz</li>
-<li>1GB LPDDR2 SDRAM</li>
-<li>2.4GHz and 5GHz IEEE 802.11.b/g/n/ac wireless LAN, Bluetooth 4.2, BLE</li>
-<li>Gigabit Ethernet over USB 2.0</li>
-<li>4 USB 2.0 ports</li>
-<li>GPIO, I2C, I2S, SPI, UARTs</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://en.unicorecomm.com/products/detail/1"><strong>Unicorecomm GNSS UB4B0M</strong></a></p>
-<details class="specs"><summary></summary><blockquote>
-<p>Should cover the same constellation system of the Rover</p>
-</blockquote>
-<ul>
-<li>GPS L1/L2/L5 + BDS B1/B2/B3 + GLONASS L1/L2 + Galileo E1/E5a/E5b+ QZSS L1/L2/L5</li>
-<li>UARTs, 1PPS</li>
-<li>Onboard MEMS integrated navigation ??</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://en.harxon.com/products.php?CateId=41"><strong>Harxon HX-CH7604A antennas</strong></a></p>
-<details class="specs"><summary></summary><ul>
-<li>All-constellation Multi-frequency L1/L2, G1/G2, E1, B1/B2/B3</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>SMA Female to MCX Male</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>UB4B0M has <strong>MCX</strong> Female connector<br />
-HX-CH7604A has SMA Male connector</p>
-</blockquote>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>MicroSD Card</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>Sandisk Ultra 16 GB, class 10, SDHC I</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Rechargeable Battery</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>5V with 2000 mAh</li>
-<li>Peak current at 2 A</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>nRF24L01 2.4GHz Transceiver + PA + LNA</strong></p>
-<details class="specs"><summary></summary><ul>
-<li>ISM 2.4GHz, 126 Channels GFSK</li>
-<li>250kbps, 1Mbps và 2Mbps</li>
-<li>SPI interface to host MCU</li>
-<li>PA + LNA for upto 1 Km range</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>USB TTL to COM</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>No need this component if using on-board UARTs port after reconfiguring OS kernel</p>
-</blockquote>
-<ul>
-<li>3.3V/ 5V to USB COM</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>OLED LCD</strong></p>
-<details class="specs"><summary></summary><blockquote>
-<p>Show system status without connecting to PC via WiFi</p>
-</blockquote>
-<ul>
-<li>128x64 Monochrome</li>
-<li>I2C interface</li>
-</ul>
-</details>
-</li>
-</ul>
-<h2 id="other-stuff">Other stuff<a class="headerlink" href="#other-stuff" title="Permanent link">⚓︎</a></h2>
-<p><label><input type="checkbox" class="specs" onclick="toggleDetails()">Show specification</input></label></p>
-<ul class="task-list">
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> STM32 Dev board</p>
-<details class="specs"><summary></summary><ul>
-<li>Emulate GNSS data when GPS is not available (in house, or cloudy days)</li>
-</ul>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jump 2.0mm</p>
-<details class="specs"><summary></summary><p>Unicorecomm GNSS modules use headers at 2.0mm pitch</p>
-</details>
-</li>
-<li class="task-list-item">
-<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Remote Control Car with large base</p>
-<details class="specs"><summary></summary><blockquote>
-<p>Mount Rover on the car for testing</p>
-</blockquote>
-</details>
-</li>
-</ul>
+<h2 id="2-software">2. Software<a class="headerlink" href="#2-software" title="Permanent link">⚓︎</a></h2>
     
 
               
@@ -735,7 +484,7 @@ HX-CH7604A has SMA Male connector</p>
 
   <h2 id="__comments">Comments</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://www.codeinsideout.com/lidar-mapping-poc/components/",this.page.identifier="components/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//vuquangtrong-github-io.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://www.codeinsideout.com/lidar-mapping-poc/design/",this.page.identifier="design/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//vuquangtrong-github-io.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -755,7 +504,7 @@ HX-CH7604A has SMA Male connector</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../design/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System design" rel="prev">
+        <a href="../reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reference" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -764,20 +513,20 @@ HX-CH7604A has SMA Male connector</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              System design
+              Reference
             </div>
           </div>
         </a>
       
       
         
-        <a href="../gnss-emulator/" class="md-footer__link md-footer__link--next" aria-label="Next: GNSS emulator" rel="next">
+        <a href="../components/" class="md-footer__link md-footer__link--next" aria-label="Next: Components" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              GNSS emulator
+              Components
             </div>
           </div>
           <div class="md-footer__button md-icon">
