@@ -1,0 +1,3 @@
+[submodule "lidar-mapping-poc.gnss_emu"]
+	path = lidar-mapping-poc.gnss_emu
+	url = https://github.com/vuquangtrong/lidar-mapping-poc.gnss_emu.git
