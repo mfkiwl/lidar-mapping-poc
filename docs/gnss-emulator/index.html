@@ -63,17 +63,6 @@
     
       
 
-  
-
-
-  
-
-  
-
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-42618265-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
-
 
     
     
@@ -300,95 +289,101 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GNSS emulator
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        GNSS emulator
+    <li class="md-nav__item">
+      <a href="../gnss/" class="md-nav__link">
+        GNSS
       </a>
+    </li>
+  
+
+    
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#1-requirements" class="md-nav__link">
-    1. Requirements
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#2-configuration" class="md-nav__link">
-    2. Configuration
-  </a>
+
   
-    <nav class="md-nav" aria-label="2. Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-system-clock" class="md-nav__link">
-    2.1. System Clock
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-pps-signal" class="md-nav__link">
-    2.2. PPS Signal
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-uart-protocol" class="md-nav__link">
-    2.3. UART Protocol
-  </a>
+    <li class="md-nav__item">
+      <a href="../imu/" class="md-nav__link">
+        IMU
+      </a>
+    </li>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-messages" class="md-nav__link">
-    2.4. Messages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+
+    
       
-        <li class="md-nav__item">
-  <a href="#3-implementation" class="md-nav__link">
-    3. Implementation
-  </a>
-  
-</li>
       
-    </ul>
-  
-</nav>
       
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rover/" class="md-nav__link">
+        Rover
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base/" class="md-nav__link">
+        Base station
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping/" class="md-nav__link">
+        Mapping
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post-process/" class="md-nav__link">
+        Post-process
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/" class="md-nav__link">
+        Notes
+      </a>
     </li>
   
 
@@ -519,16 +514,16 @@
 <li>Counter Period <code>AAR</code>: <em>2000-1</em></li>
 <li>PWM Generation Channel 1:<ul>
 <li>Mode: <em>1</em> (Positive at start)</li>
-<li>Pulse: <em>500</em> ( 25% of AAR)</li>
+<li>Pulse: <em>500</em> (25% of AAR)</li>
 </ul>
 </li>
-<li>Interrtupt: on <em>Update</em></li>
+<li>Interrupt: on <em>Update</em></li>
 </ul>
 <h3 id="23-uart-protocol">2.3. UART Protocol<a class="headerlink" href="#23-uart-protocol" title="Permanent link">⚓︎</a></h3>
 <p>Using a setting of 8-N-1 (8 bit, No parity, 1 stop bit), each byte requires 10 bits.
-Baudrate at <strong>115200</strong> bit-per-second means the speed is 11520 byte-per-second.
+Baud rate at <strong>115200</strong> bit-per-second means the speed is 11520 byte-per-second.
 At this speed, 4 <code>OBSVMA</code> messages can be transfer completely in a second.</p>
-<p>All messages on UART ports will be send in <strong>DMA mode</strong> which allows sending data concurrently.
+<p>All messages on UART ports will be sent in <strong>DMA mode</strong> which allows sending data concurrently.
 Interrupt must be enabled to make DMA function work properly.</p>
 <p>The UART1, UART2, UART3 are configured as:</p>
 <ul>
@@ -571,7 +566,9 @@ Interrupt must be enabled to make DMA function work properly.</p>
 <p>
 <figure><img src="gnss_emulator_output.png" /><figcaption>Output of GNSS emulator</figcaption>
 </figure>
-<figure><img src="gnss_emulator_output_2.png" /><figcaption>Concurent outputs</figcaption>
+</p>
+<p>
+<figure><img src="gnss_emulator_output_2.png" /><figcaption>Concurrent outputs</figcaption>
 </figure>
 </p>
     
@@ -579,10 +576,6 @@ Interrupt must be enabled to make DMA function work properly.</p>
               
                 
 
-
-  <h2 id="__comments">Comments</h2>
-  <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://www.codeinsideout.com/lidar-mapping-poc/gnss-emulator/",this.page.identifier="gnss-emulator/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//vuquangtrong-github-io.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -602,7 +595,7 @@ Interrupt must be enabled to make DMA function work properly.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../components/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Components" rel="prev">
+        <a href="../gnss/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GNSS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -611,11 +604,26 @@ Interrupt must be enabled to make DMA function work properly.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Components
+              GNSS
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../imu/" class="md-footer__link md-footer__link--next" aria-label="Next: IMU" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              IMU
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

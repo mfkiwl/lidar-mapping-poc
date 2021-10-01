@@ -2,27 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.codeinsideout.com/lidar-mapping-poc/</loc>
-         <lastmod>2021-09-21</lastmod>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/base/</loc>
+         <lastmod>2021-10-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.codeinsideout.com/lidar-mapping-poc/components/</loc>
-         <lastmod>2021-09-21</lastmod>
+         <lastmod>2021-10-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.codeinsideout.com/lidar-mapping-poc/design/</loc>
-         <lastmod>2021-09-21</lastmod>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/gnss/</loc>
+         <lastmod>2021-10-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.codeinsideout.com/lidar-mapping-poc/gnss-emulator/</loc>
-         <lastmod>2021-09-21</lastmod>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/imu/</loc>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/mapping/</loc>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/notes/</loc>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/post-process/</loc>
+         <lastmod>2021-10-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.codeinsideout.com/lidar-mapping-poc/reference/</loc>
-         <lastmod>2021-09-21</lastmod>
+         <lastmod>2021-10-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.codeinsideout.com/lidar-mapping-poc/rover/</loc>
+         <lastmod>2021-10-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

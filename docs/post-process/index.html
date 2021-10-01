@@ -16,21 +16,21 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This describes the hardware block diagram and Software archtecture for a Lidar Mapping system.">
+        <meta name="description" content="Process Rover and Base data offline in a host computer">
       
       
       
         <meta name="author" content="vqtrong">
       
       
-        <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/design/">
+        <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/post-process/">
       
       <link rel="icon" href="../favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
     
     
       
-        <title>System design - Lidar Mapping (PoC)</title>
+        <title>Post-process - Lidar Mapping (PoC)</title>
       
     
     
@@ -84,11 +84,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#1-hardware" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -115,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              System design
+              Post-process
             
           </span>
         </div>
@@ -259,81 +254,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          System design
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../design/" class="md-nav__link">
         System design
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-hardware" class="md-nav__link">
-    1. Hardware
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Hardware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-block-diagram" class="md-nav__link">
-    1.1. Block diagram
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-power-supply" class="md-nav__link">
-    1.2. Power supply
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-wiring" class="md-nav__link">
-    2. Wiring
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-software" class="md-nav__link">
-    3. Software
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -434,11 +359,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../post-process/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Post-process
       </a>
+      
     </li>
   
 
@@ -465,123 +398,16 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-hardware" class="md-nav__link">
-    1. Hardware
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Hardware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-block-diagram" class="md-nav__link">
-    1.1. Block diagram
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-power-supply" class="md-nav__link">
-    1.2. Power supply
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-wiring" class="md-nav__link">
-    2. Wiring
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-software" class="md-nav__link">
-    3. Software
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
     
-        <h1 class="page-title">System design</h1>
-        <p class="page-description">This describes the hardware block diagram and Software archtecture for a Lidar Mapping system.</p>
+        <h1 class="page-title">Post process for GNSS data</h1>
+        <p class="page-description">Process Rover and Base data offline in a host computer</p>
         <br>
         <hr>
-        <p>Based on study of a <a href="../reference/">reference project</a> from Livox.</p>
-<h2 id="1-hardware">1. Hardware<a class="headerlink" href="#1-hardware" title="Permanent link">⚓︎</a></h2>
-<p>Refer to the list of <a href="../components/">Components</a>.</p>
-<h3 id="11-block-diagram">1.1. Block diagram<a class="headerlink" href="#11-block-diagram" title="Permanent link">⚓︎</a></h3>
-<p>
-<figure><img src="rover.drawio.svg" /><figcaption>Rover's components</figcaption>
-</figure>
-</p>
-<p>
-<figure><img src="base.drawio.svg" /><figcaption>Base's components</figcaption>
-</figure>
-</p>
-<p><strong>Notes</strong>:</p>
-<ul>
-<li>
-<p>All modules, except Livox's, are 3.3 V level, so they are can be connected directly. This helps to omit USB TTL-to-COM.</p>
-</li>
-<li>
-<p>Raspberry Pi 3 B+ has an on-board WiFi module.</p>
-</li>
-</ul>
-<h3 id="12-power-supply">1.2. Power supply<a class="headerlink" href="#12-power-supply" title="Permanent link">⚓︎</a></h3>
-<p>
-<figure><img src="rover_power.drawio.svg" /><figcaption>Rover's power supply</figcaption>
-</figure>
-</p>
-<p>
-<figure><img src="base_power.drawio.svg" /><figcaption>Base's power supply</figcaption>
-</figure>
-</p>
-<p><strong>Notes</strong>:</p>
-<ul>
-<li>The input voltage of Livox Converter is 10 ~ 16 VDC, therefore, an 1N5400 diode can be connected in serial to reduce voltage to under 16 VDC.</li>
-</ul>
-<h2 id="2-wiring">2. Wiring<a class="headerlink" href="#2-wiring" title="Permanent link">⚓︎</a></h2>
-<p>
-<figure><img src="rover-wiring.drawio.svg" /><figcaption>Rover wiring</figcaption>
-</figure>
-</p>
-<p>
-<figure><img src="base-wiring.drawio.svg" /><figcaption>Base wiring</figcaption>
-</figure>
-</p>
-<h2 id="3-software">3. Software<a class="headerlink" href="#3-software" title="Permanent link">⚓︎</a></h2>
+        
     
 
               
@@ -606,7 +432,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reference" rel="prev">
+        <a href="../mapping/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mapping" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -615,20 +441,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Reference
+              Mapping
             </div>
           </div>
         </a>
       
       
         
-        <a href="../components/" class="md-footer__link md-footer__link--next" aria-label="Next: Components" rel="next">
+        <a href="../notes/" class="md-footer__link md-footer__link--next" aria-label="Next: Notes" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Components
+              Notes
             </div>
           </div>
           <div class="md-footer__button md-icon">
