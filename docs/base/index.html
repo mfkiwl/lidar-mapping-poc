@@ -16,7 +16,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="All steps to install and configure the Raspberry Pi 3 B+ for communicating with other modules">
+        <meta name="description" content="All steps to install and configure the Raspberry Pi 3 B+ for communicating with other modules.">
       
       
       
@@ -26,7 +26,7 @@
         <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/base/">
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.92558b1b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-install-operating-system" class="md-skip">
+        <a href="#1-operating-system" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Lidar Mapping (PoC)" class="md-header__button md-logo" aria-label="Lidar Mapping (PoC)" data-md-component="logo">
       
@@ -179,11 +181,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -365,103 +370,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install-operating-system" class="md-nav__link">
-    1. Install Operating System
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Install Operating System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-tweaks" class="md-nav__link">
-    1.1. Tweaks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-enable-gpio" class="md-nav__link">
-    1.2. Enable GPIO
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-take-control-of-uart" class="md-nav__link">
-    2. Take control of UART
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Take control of UART">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-add-permission" class="md-nav__link">
-    2.1. Add permission
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-test-uart-ports" class="md-nav__link">
-    2.2. Test UART ports
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-wiring" class="md-nav__link">
-    3. Wiring
+  <a href="#1-operating-system" class="md-nav__link">
+    1. Operating System
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-add-nrf24-driver" class="md-nav__link">
-    4. Add nRF24 driver
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Add nRF24 driver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-install-driver" class="md-nav__link">
-    4.1. Install driver
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-example-app" class="md-nav__link">
-    4.2. Example app
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-add-oled-driver" class="md-nav__link">
-    5. Add OLED driver
+  <a href="#2-uart-config" class="md-nav__link">
+    2. UART Config
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-auto-mount-usb" class="md-nav__link">
-    6. Auto-mount USB
+  <a href="#3-module-connection" class="md-nav__link">
+    3. Module Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-serial-driver" class="md-nav__link">
+    4. Serial driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nrf24-driver" class="md-nav__link">
+    5. nRF24 driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-oled-driver" class="md-nav__link">
+    6. OLED driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-auto-mount-usb" class="md-nav__link">
+    7. Auto-mount USB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-auto-start-application" class="md-nav__link">
+    8. Auto-start application
   </a>
   
 </li>
@@ -543,103 +502,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install-operating-system" class="md-nav__link">
-    1. Install Operating System
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Install Operating System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-tweaks" class="md-nav__link">
-    1.1. Tweaks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-enable-gpio" class="md-nav__link">
-    1.2. Enable GPIO
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-take-control-of-uart" class="md-nav__link">
-    2. Take control of UART
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Take control of UART">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-add-permission" class="md-nav__link">
-    2.1. Add permission
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-test-uart-ports" class="md-nav__link">
-    2.2. Test UART ports
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-wiring" class="md-nav__link">
-    3. Wiring
+  <a href="#1-operating-system" class="md-nav__link">
+    1. Operating System
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-add-nrf24-driver" class="md-nav__link">
-    4. Add nRF24 driver
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Add nRF24 driver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-install-driver" class="md-nav__link">
-    4.1. Install driver
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-example-app" class="md-nav__link">
-    4.2. Example app
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-add-oled-driver" class="md-nav__link">
-    5. Add OLED driver
+  <a href="#2-uart-config" class="md-nav__link">
+    2. UART Config
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-auto-mount-usb" class="md-nav__link">
-    6. Auto-mount USB
+  <a href="#3-module-connection" class="md-nav__link">
+    3. Module Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-serial-driver" class="md-nav__link">
+    4. Serial driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nrf24-driver" class="md-nav__link">
+    5. nRF24 driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-oled-driver" class="md-nav__link">
+    6. OLED driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-auto-mount-usb" class="md-nav__link">
+    7. Auto-mount USB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-auto-start-application" class="md-nav__link">
+    8. Auto-start application
   </a>
   
 </li>
@@ -657,31 +570,25 @@
               
     
         <h1 class="page-title">Configure a Base stattion on Raspberry Pi 3 B+ board</h1>
-        <p class="page-description">All steps to install and configure the Raspberry Pi 3 B+ for communicating with other modules</p>
+        <p class="page-description">All steps to install and configure the Raspberry Pi 3 B+ for communicating with other modules.</p>
         <br>
         <hr>
-        <h2 id="1-install-operating-system">1. Install Operating System<a class="headerlink" href="#1-install-operating-system" title="Permanent link">⚓︎</a></h2>
+        <h2 id="1-operating-system">1. Operating System<a class="headerlink" href="#1-operating-system" title="Permanent link">⚓︎</a></h2>
 <p>Download <a href="https://www.raspberrypi.org/software/">Raspberry Pi Imager</a> and install it.</p>
 <p>Run the Pi Imager, and select the Desktop version but without recommended software.</p>
 <p>Press <code>Ctrl + Shift + X</code> to show the advanced menu, fill some settings as below:</p>
 <ul>
 <li>Hostname: <em>base</em></li>
-<li>SSH: <em>yes</em> and select password</li>
-<li>WiFi: <em>yes</em> and set SSID and password</li>
+<li>SSH: <em>yes</em> and set a password</li>
+<li>WiFi: <em>yes</em> and set a SSID and its password</li>
 </ul>
 <p>Note to save the options for later use if needed.</p>
-<!--
-Download [Raspberry Pi OS](https://www.raspberrypi.org/software/operating-systems/) image, select Desktop version but without recommended softwares.
-
-Download [balenaEtcher](https://www.balena.io/etcher/) and install it, and write the Image in an SD Card. After finishing, re-plug the SD Card.
-
-Add an empty file with name `ssh` into the `boot` partition to enabled SSH.
-
-It is also recommended enabling WiFi network by add a file `wpa_supplicant.conf` in the `boot` partitition:
-
-::: file
-wpa_supplicant.conf
-
+<details class="info"><summary>Alternative method using balenaEtcher</summary><p>Download <a href="https://www.raspberrypi.org/software/operating-systems/">Raspberry Pi OS</a> image, select Desktop version but without recommended software.</p>
+<p>Download <a href="https://www.balena.io/etcher/">balenaEtcher</a> and install it, and write the Image in an SD Card. After finishing, re-plug the SD Card.</p>
+<p>Add an empty file with name <code>ssh</code> into the <code>boot</code> partition to enabled SSH.</p>
+<p>It is also recommended enabling WiFi network by add a file <code>wpa_supplicant.conf</code> in the <code>boot</code> partition:</p>
+<div class="file"></div>
+<p>wpa_supplicant.conf</p>
 <div class="highlight"><pre><span></span><code><span class="na">country</span><span class="o">=</span><span class="s">US</span>
 <span class="na">ctrl_interface</span><span class="o">=</span><span class="s">DIR=/var/run/wpa_supplicant GROUP=netdev</span>
 <span class="na">update_config</span><span class="o">=</span><span class="s">1</span>
@@ -691,23 +598,31 @@ wpa_supplicant.conf
     <span class="na">psk</span><span class="o">=</span><span class="s">&quot;NETWORK-PASSWORD&quot;</span>
 <span class="na">}</span>
 </code></pre></div>
-
-For the official Raspberry Pi OS, the default username is `pi`, with password `raspberry`, on the host `raspberrypi`.
-
-Bonjour is a service from Apple to discovery devices in a network using hostname. Install it and then Pi can be connected using its default hostname `raspberrypi.local`.
--->
-
+<p>For the official Raspberry Pi OS, the default username is <code>pi</code>, with password <code>raspberry</code>, on the host <code>raspberrypi</code>.</p>
+<p>Bonjour is a service from Apple to discovery devices in a network using hostname. Install it and then Pi can be connected using its default hostname <code>raspberrypi.local</code>.</p>
+</details>
 <div class="admonition info">
 <p class="admonition-title">SSH Connection</p>
 <p>With SSH enabled and WiFi network connected, accessing to Raspberry Pi is remotely through SSH. Using any X11-fordwarding SSH, such as MobaXterm, GUI application can be shown in the host PC.</p>
 </div>
-<h3 id="11-tweaks">1.1. Tweaks<a class="headerlink" href="#11-tweaks" title="Permanent link">⚓︎</a></h3>
-<p>Some tweaks can be applied after login.</p>
+<p>Some tweaks can be applied after login:</p>
+<ul>
+<li>
 <p>To use some list command, in <code>.bashrc</code>, enable alias for <code>ls</code> command.</p>
+</li>
+<li>
 <p>To disable animation on GUI:</p>
 <div class="highlight"><pre><span></span><code>gsettings <span class="nb">set</span> org.gnome.desktop.interface enable-animations <span class="nb">false</span>
 </code></pre></div>
-<h3 id="12-enable-gpio">1.2. Enable GPIO<a class="headerlink" href="#12-enable-gpio" title="Permanent link">⚓︎</a></h3>
+</li>
+<li>
+<p>If <code>eth0</code> is used, it may take priority of network connection over the <code>wlan0</code>. If internet is accessible through <code>wlan0</code>, edit <code>/etc/dhcpcd.conf</code> and add this:</p>
+<div class="highlight"><pre><span></span><code><span class="na">interface wlan0</span>
+<span class="na">metric 100</span>
+</code></pre></div>
+<p>Then wireless will have precedence, its default route/gateway will be used.</p>
+</li>
+</ul>
 <div class="row">
 <div class="col">
 <p>The official tool <code>raspi-config</code> should be used to configure the GPIO on Pi.</p>
@@ -735,9 +650,11 @@ https://roboticsbackend.com/raspberry-pi-gpios-default-state/
 </p>
 </div>
 </div>
-<h2 id="2-take-control-of-uart">2. Take control of UART<a class="headerlink" href="#2-take-control-of-uart" title="Permanent link">⚓︎</a></h2>
-<p>Refer to <a href="https://www.raspberrypi.org/documentation/computers/configuration.html#primary-uart">https://www.raspberrypi.org/documentation/computers/configuration.html#primary-uart</a>.</p>
-<p>There are two types of UART available on the Raspberry Pi - PL011 and mini UART. The PL011 is a capable, broadly 16550-compatible UART, while the mini UART has a reduced feature set. All UARTs on the Raspberry Pi are 3.3V only.</p>
+<h2 id="2-uart-config">2. UART Config<a class="headerlink" href="#2-uart-config" title="Permanent link">⚓︎</a></h2>
+<blockquote>
+<p>Refer to <a href="https://www.raspberrypi.org/documentation/computers/configuration.html#primary-uart">Raspberry Pi UART</a>.</p>
+</blockquote>
+<p>There are two types of UART available on the Raspberry Pi - <em>PL011</em> and <em>mini UART</em>. The PL011 is a capable, broadly 16550-compatible UART, while the mini UART has a reduced feature set. All UARTs on the Raspberry Pi are 3.3V only.</p>
 <p>The Raspberry Pi 3 has below default UART configuration:</p>
 <table>
 <thead>
@@ -768,7 +685,6 @@ https://roboticsbackend.com/raspberry-pi-gpios-default-state/
 </table>
 <p>That means the exported UART port on GPIO header is a Mini-UART. The problem is the speed of mini-UART port depends on VPU (graphic) Core Frequency.</p>
 <p>The primary UART is disabled by default. It has to be enabled by running <code>raspi-config</code> to set up interfaces.</p>
-<h3 id="21-add-permission">2.1. Add permission<a class="headerlink" href="#21-add-permission" title="Permanent link">⚓︎</a></h3>
 <p>To get rid of using <code>sudo</code> permission, add current user into the serial group.</p>
 <p>Run <code>ls -al /dev/tty*</code> to check the user group of <code>ttyS0</code>, <code>ttyTHS1</code>. Normally, it is needed to add current user into <code>tty</code> and <code>dialout</code> groups:</p>
 <div class="terminal"></div>
@@ -776,8 +692,7 @@ https://roboticsbackend.com/raspberry-pi-gpios-default-state/
 <span class="linenos" data-linenos="2 "></span>sudo usermod -a -G dialout <span class="nv">$USER</span>
 <span class="linenos" data-linenos="3 "></span>sudo reboot
 </code></pre></div>
-<h3 id="22-test-uart-ports">2.2. Test UART ports<a class="headerlink" href="#22-test-uart-ports" title="Permanent link">⚓︎</a></h3>
-<p>For testing, a serial terminal must be installed. Choose one of below.</p>
+<details class="info"><summary>UART Testing</summary><p>For testing, a serial terminal must be installed. Choose one of below.</p>
 <p><strong>putty</strong></p>
 <div class="terminal"></div>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo apt install putty -y
@@ -805,18 +720,62 @@ https://roboticsbackend.com/raspberry-pi-gpios-default-state/
 <span class="linenos" data-linenos="2 "></span>screen /dev/ttyS0 <span class="m">115200</span>
 </code></pre></div>
 <p>Press <code>Ctrl-A K</code> to exit.</p>
-<h2 id="3-wiring">3. Wiring<a class="headerlink" href="#3-wiring" title="Permanent link">⚓︎</a></h2>
+</details>
+<h2 id="3-module-connection">3. Module Connection<a class="headerlink" href="#3-module-connection" title="Permanent link">⚓︎</a></h2>
 <p>Refer to below pinout diagram:</p>
 <p>
-<figure><img src="base-wiring.drawio.svg" /><figcaption>Base wiring</figcaption>
+<figure><img src="../design/base-wiring.drawio.svg" /><figcaption>Base wiring</figcaption>
 </figure>
 </p>
-<h2 id="4-add-nrf24-driver">4. Add nRF24 driver<a class="headerlink" href="#4-add-nrf24-driver" title="Permanent link">⚓︎</a></h2>
-<!--
-![nRF24 pinout](nrf24l01_pa_lna_pinout.jpg)
--->
+<h2 id="4-serial-driver">4. Serial driver<a class="headerlink" href="#4-serial-driver" title="Permanent link">⚓︎</a></h2>
+<p>Download source code and build:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/SerialPort.git <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">cd</span> SerialPort <span class="o">&amp;&amp;</span> <span class="se">\</span>
+make <span class="o">&amp;&amp;</span> <span class="se">\</span>
+sudo make install
+</code></pre></div>
+<p>An example to communicate with Serial port:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Serial library</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;serial/SerialPort.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<h3 id="41-install-driver">4.1. Install driver<a class="headerlink" href="#41-install-driver" title="Permanent link">⚓︎</a></h3>
+<span class="cp">#define SERIAL_PORT &quot;/dev/ttyS0&quot;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="w"> </span><span class="cm">/*int argc, char *argv[]*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">SerialPort</span><span class="w"> </span><span class="n">serial</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">errorOpening</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serial</span><span class="p">.</span><span class="n">openDevice</span><span class="p">(</span><span class="n">SERIAL_PORT</span><span class="p">,</span><span class="w"> </span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">errorOpening</span><span class="o">!=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">errorOpening</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Successful connection to %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">SERIAL_PORT</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Display ASCII characters (from 32 to 128)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">32</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="mi">128</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">serial</span><span class="p">.</span><span class="n">writeChar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">usleep</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Read lines and print them out</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">line</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serial</span><span class="p">.</span><span class="n">readBytes</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">line</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Close the serial device</span>
+<span class="w">    </span><span class="n">serial</span><span class="p">.</span><span class="n">closeDevice</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Compile and run:</p>
+<div class="highlight"><pre><span></span><code>g++ example.cpp -lserial -o example
+</code></pre></div>
+<h2 id="5-nrf24-driver">5. nRF24 driver<a class="headerlink" href="#5-nrf24-driver" title="Permanent link">⚓︎</a></h2>
 <p>Download source code from GitHub and build:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/RF24 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> RF24 <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -827,7 +786,7 @@ sudo make install
 <div class="admonition caution">
 <p class="admonition-title">SPIDEV must be used to avoid permission error when using default RPi BCM driver</p>
 </div>
-<details class="note"><summary>Work with the original source code</summary><p>GitHub at <a href="https://github.com/nRF24/RF24">https://github.com/nRF24/RF24</a>. <br />
+<details class="info"><summary>Work with the original source code</summary><p>GitHub at <a href="https://github.com/nRF24/RF24">https://github.com/nRF24/RF24</a>. <br />
 The guide to install in Linux at <a href="https://nrf24.github.io/RF24/md_docs_linux_install.html">https://nrf24.github.io/RF24/md_docs_linux_install.html</a>.</p>
 <p>Download the <code>install.sh</code> file:</p>
 <div class="highlight"><pre><span></span><code>wget http://tmrh20.github.io/RF24Installer/RPi/install.sh
@@ -861,9 +820,10 @@ The guide to install in Linux at <a href="https://nrf24.github.io/RF24/md_docs_l
 make: Leaving directory &#39;/home/pi/rf24libs/RF24&#39;
 </code></pre></div>
 </details>
-<h3 id="42-example-app">4.2. Example app<a class="headerlink" href="#42-example-app" title="Permanent link">⚓︎</a></h3>
 <p>Source to test data receiving. Check the transferring site in <a href="../rover/">Rover</a>.</p>
-<details class="code"><summary>rf24_tx.cpp</summary><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">    // cin, cout, endl</span><span class="cp"></span>
+<div class="file"></div>
+<p>rf24_tx.cpp</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">    // cin, cout, endl</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;RF24/RF24.h&gt;</span><span class="cp"></span>
 
 <span class="c1">// create RF24 instance</span>
@@ -901,7 +861,6 @@ make: Leaving directory &#39;/home/pi/rf24libs/RF24&#39;
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-</details>
 <p>Compile the source code:</p>
 <div class="highlight"><pre><span></span><code>arm-linux-gnueabihf-g++ -marm -march<span class="o">=</span>armv6zk -mtune<span class="o">=</span>arm1176jzf-s -mfpu<span class="o">=</span>vfp -mfloat-abi<span class="o">=</span>hard -Ofast -Wall -pthread  rf24_tx.cpp -lrf24 -o rf24_tx
 </code></pre></div>
@@ -963,7 +922,7 @@ pipe 4 (closed) bound   = 0xc5
 pipe 5 (closed) bound   = 0xc6
 Start TX
 </code></pre></div>
-<h2 id="5-add-oled-driver">5. Add OLED driver<a class="headerlink" href="#5-add-oled-driver" title="Permanent link">⚓︎</a></h2>
+<h2 id="6-oled-driver">6. OLED driver<a class="headerlink" href="#6-oled-driver" title="Permanent link">⚓︎</a></h2>
 <p>Download source code and build:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/OLED_SSD1306_I2C_Linux.git <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> OLED_SSD1306_I2C_Linux <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -998,13 +957,15 @@ sudo make install
 <div class="highlight"><pre><span></span><code>gcc progress_bar.c -lssd1306 -o progress_bar <span class="o">&amp;&amp;</span> <span class="se">\</span>
 ./progress_bar
 </code></pre></div>
-<h2 id="6-auto-mount-usb">6. Auto-mount USB<a class="headerlink" href="#6-auto-mount-usb" title="Permanent link">⚓︎</a></h2>
+<h2 id="7-auto-mount-usb">7. Auto-mount USB<a class="headerlink" href="#7-auto-mount-usb" title="Permanent link">⚓︎</a></h2>
 <p>Check out and install:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/USB_Automount.git
 <span class="nb">cd</span> USB_Automount
 ./install
 </code></pre></div>
 <p>Plugged-in USB will be mounted into <code>/media/&lt;Label&gt;</code> or <code>/media/&lt;sdXy&gt;</code>.</p>
+<h2 id="8-auto-start-application">8. Auto-start application<a class="headerlink" href="#8-auto-start-application" title="Permanent link">⚓︎</a></h2>
+<p>Refer to <a href="../rover/">Rover setup</a>.</p>
     
 
               
@@ -1065,10 +1026,12 @@ sudo make install
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -1102,10 +1065,10 @@ sudo make install
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
         <script src="../assets/view-bigimg.js"></script>
       

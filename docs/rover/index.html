@@ -26,7 +26,7 @@
         <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/rover/">
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.92558b1b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-install-operating-system" class="md-skip">
+        <a href="#1-operating-system" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Lidar Mapping (PoC)" class="md-header__button md-logo" aria-label="Lidar Mapping (PoC)" data-md-component="logo">
       
@@ -179,11 +181,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -350,18 +355,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install-operating-system" class="md-nav__link">
-    1. Install Operating System
+  <a href="#1-operating-system" class="md-nav__link">
+    1. Operating System
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-initial-system-configuration" class="md-nav__link">
-    2. Initial system configuration
+  <a href="#2-system-config" class="md-nav__link">
+    2. System config
   </a>
   
-    <nav class="md-nav" aria-label="2. Initial system configuration">
+    <nav class="md-nav" aria-label="2. System config">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -398,37 +403,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-take-control-of-uart-port" class="md-nav__link">
-    3. Take control of UART port
+  <a href="#3-uart-config" class="md-nav__link">
+    3. UART Config
   </a>
   
-    <nav class="md-nav" aria-label="3. Take control of UART port">
+    <nav class="md-nav" aria-label="3. UART Config">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-uart1-at-devttyths1" class="md-nav__link">
-    3.1. UART1 at /dev/ttyTHS1
+  <a href="#31-uart1" class="md-nav__link">
+    3.1. UART1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-uart2-at-devttys0" class="md-nav__link">
-    3.2. UART2 at /dev/ttyS0
+  <a href="#32-uart2" class="md-nav__link">
+    3.2. UART2
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-add-permission" class="md-nav__link">
-    3.3. Add permission
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-test-uart-ports" class="md-nav__link">
-    3.4. Test UART ports
+  <a href="#33-permission" class="md-nav__link">
+    3.3. Permission
   </a>
   
 </li>
@@ -446,23 +444,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-add-nrf24l01p-driver" class="md-nav__link">
-    5. Add nRF24L01p driver
+  <a href="#5-serial-driver" class="md-nav__link">
+    5. Serial driver
   </a>
   
-    <nav class="md-nav" aria-label="5. Add nRF24L01p driver">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nrf24l01p-driver" class="md-nav__link">
+    6. nRF24L01p driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-oled-driver" class="md-nav__link">
+    7. OLED driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ros-melodic" class="md-nav__link">
+    8. ROS Melodic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-livox-sdk" class="md-nav__link">
+    9. Livox SDK
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Livox SDK">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#23-install-driver" class="md-nav__link">
-    2.3. Install driver
+  <a href="#91-dependencies" class="md-nav__link">
+    9.1. Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#24-example-app" class="md-nav__link">
-    2.4. Example app
+  <a href="#92-livox-sdk" class="md-nav__link">
+    9.2. Livox SDK
   </a>
   
 </li>
@@ -473,37 +499,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-add-oled-driver" class="md-nav__link">
-    3. Add OLED driver
+  <a href="#10-livox-ros-driver" class="md-nav__link">
+    10. Livox ROS driver
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-install-ros-melodic" class="md-nav__link">
-    4. Install ROS Melodic
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-install-livox-sdk" class="md-nav__link">
-    5. Install Livox SDK
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Install Livox SDK">
+    <nav class="md-nav" aria-label="10. Livox ROS driver">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-dependencies" class="md-nav__link">
-    5.1. Dependencies
+  <a href="#101-configurations" class="md-nav__link">
+    10.1. Configurations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-livox-sdk" class="md-nav__link">
-    5.2. Livox SDK
+  <a href="#102-timestamp" class="md-nav__link">
+    10.2. Timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-launches" class="md-nav__link">
+    10.3. Launches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-test-ros" class="md-nav__link">
+    10.4. Test ROS
   </a>
   
 </li>
@@ -514,56 +540,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-install-livox-ros-driver" class="md-nav__link">
-    6. Install Livox ROS driver
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Install Livox ROS driver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-configurations" class="md-nav__link">
-    6.1. Configurations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-timestamp" class="md-nav__link">
-    6.2. Timestamp
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63-launches" class="md-nav__link">
-    6.3. Launches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#64-test-ros" class="md-nav__link">
-    6.4. Test ROS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-auto-mount-usb" class="md-nav__link">
-    7. Auto-mount USB
+  <a href="#11-auto-mount-usb" class="md-nav__link">
+    11. Auto-mount USB
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-auto-start-application" class="md-nav__link">
-    8. Auto-start application
+  <a href="#12-auto-start-application" class="md-nav__link">
+    12. Auto-start application
   </a>
   
 </li>
@@ -660,18 +645,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install-operating-system" class="md-nav__link">
-    1. Install Operating System
+  <a href="#1-operating-system" class="md-nav__link">
+    1. Operating System
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-initial-system-configuration" class="md-nav__link">
-    2. Initial system configuration
+  <a href="#2-system-config" class="md-nav__link">
+    2. System config
   </a>
   
-    <nav class="md-nav" aria-label="2. Initial system configuration">
+    <nav class="md-nav" aria-label="2. System config">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -708,37 +693,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-take-control-of-uart-port" class="md-nav__link">
-    3. Take control of UART port
+  <a href="#3-uart-config" class="md-nav__link">
+    3. UART Config
   </a>
   
-    <nav class="md-nav" aria-label="3. Take control of UART port">
+    <nav class="md-nav" aria-label="3. UART Config">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-uart1-at-devttyths1" class="md-nav__link">
-    3.1. UART1 at /dev/ttyTHS1
+  <a href="#31-uart1" class="md-nav__link">
+    3.1. UART1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-uart2-at-devttys0" class="md-nav__link">
-    3.2. UART2 at /dev/ttyS0
+  <a href="#32-uart2" class="md-nav__link">
+    3.2. UART2
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-add-permission" class="md-nav__link">
-    3.3. Add permission
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-test-uart-ports" class="md-nav__link">
-    3.4. Test UART ports
+  <a href="#33-permission" class="md-nav__link">
+    3.3. Permission
   </a>
   
 </li>
@@ -756,23 +734,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-add-nrf24l01p-driver" class="md-nav__link">
-    5. Add nRF24L01p driver
+  <a href="#5-serial-driver" class="md-nav__link">
+    5. Serial driver
   </a>
   
-    <nav class="md-nav" aria-label="5. Add nRF24L01p driver">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nrf24l01p-driver" class="md-nav__link">
+    6. nRF24L01p driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-oled-driver" class="md-nav__link">
+    7. OLED driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ros-melodic" class="md-nav__link">
+    8. ROS Melodic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-livox-sdk" class="md-nav__link">
+    9. Livox SDK
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Livox SDK">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#23-install-driver" class="md-nav__link">
-    2.3. Install driver
+  <a href="#91-dependencies" class="md-nav__link">
+    9.1. Dependencies
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#24-example-app" class="md-nav__link">
-    2.4. Example app
+  <a href="#92-livox-sdk" class="md-nav__link">
+    9.2. Livox SDK
   </a>
   
 </li>
@@ -783,37 +789,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-add-oled-driver" class="md-nav__link">
-    3. Add OLED driver
+  <a href="#10-livox-ros-driver" class="md-nav__link">
+    10. Livox ROS driver
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-install-ros-melodic" class="md-nav__link">
-    4. Install ROS Melodic
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-install-livox-sdk" class="md-nav__link">
-    5. Install Livox SDK
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Install Livox SDK">
+    <nav class="md-nav" aria-label="10. Livox ROS driver">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-dependencies" class="md-nav__link">
-    5.1. Dependencies
+  <a href="#101-configurations" class="md-nav__link">
+    10.1. Configurations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-livox-sdk" class="md-nav__link">
-    5.2. Livox SDK
+  <a href="#102-timestamp" class="md-nav__link">
+    10.2. Timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-launches" class="md-nav__link">
+    10.3. Launches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-test-ros" class="md-nav__link">
+    10.4. Test ROS
   </a>
   
 </li>
@@ -824,56 +830,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-install-livox-ros-driver" class="md-nav__link">
-    6. Install Livox ROS driver
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Install Livox ROS driver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-configurations" class="md-nav__link">
-    6.1. Configurations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-timestamp" class="md-nav__link">
-    6.2. Timestamp
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63-launches" class="md-nav__link">
-    6.3. Launches
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#64-test-ros" class="md-nav__link">
-    6.4. Test ROS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-auto-mount-usb" class="md-nav__link">
-    7. Auto-mount USB
+  <a href="#11-auto-mount-usb" class="md-nav__link">
+    11. Auto-mount USB
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-auto-start-application" class="md-nav__link">
-    8. Auto-start application
+  <a href="#12-auto-start-application" class="md-nav__link">
+    12. Auto-start application
   </a>
   
 </li>
@@ -894,13 +859,16 @@
         <p class="page-description">All steps to install and configure the Jetson Nano for communicating with other modules</p>
         <br>
         <hr>
-        <h2 id="1-install-operating-system">1. Install Operating System<a class="headerlink" href="#1-install-operating-system" title="Permanent link">⚓︎</a></h2>
+        <h2 id="1-operating-system">1. Operating System<a class="headerlink" href="#1-operating-system" title="Permanent link">⚓︎</a></h2>
 <div class="admonition info no-title">
 <p class="admonition-title">&nbsp;</p>
 <p>Original guide is at <a href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit">Getting Started with Jetson Nano Developer Kit</a>.</p>
 </div>
 <p>Download the latest <a href="https://developer.nvidia.com/jetson-nano-sd-card-image">Jetson Nano Developer Kit SD Card Image</a>. Other older versions can be found in <a href="https://developer.nvidia.com/embedded/jetpack-archive">Jetpack Archive</a>.</p>
 <p>Download <a href="https://www.balena.io/etcher/">balenaEtcher</a> and install it, and write Jetson Image in an SD Card.</p>
+<div class="admonition caution">
+<p class="admonition-title">A micro SDCard with at least 32GB</p>
+</div>
 <p>Power on the board, either use Monitor with Keyboard and Mouse, or use Headless Mode by using DC jack (Jumper J48 connected) and connect micro-USB port to PC.</p>
 <div class="admonition caution no-title">
 <p class="admonition-title">&nbsp;</p>
@@ -914,7 +882,7 @@
 <span class="m">[   15.823522] </span>Please complete system configuration setup on the serial port provided device mode connection. e.g. /dev/ttyACMx where x can 0, 1, 2 etc.
 </code></pre></div>
 </div>
-<h2 id="2-initial-system-configuration">2. Initial system configuration<a class="headerlink" href="#2-initial-system-configuration" title="Permanent link">⚓︎</a></h2>
+<h2 id="2-system-config">2. System config<a class="headerlink" href="#2-system-config" title="Permanent link">⚓︎</a></h2>
 <h3 id="21-general">2.1. General<a class="headerlink" href="#21-general" title="Permanent link">⚓︎</a></h3>
 <ul>
 <li>Time Mode: <em>UTC</em></li>
@@ -1044,8 +1012,8 @@ sudo apt install nano -y
 </p>
 </div>
 </div>
-<h2 id="3-take-control-of-uart-port">3. Take control of UART port<a class="headerlink" href="#3-take-control-of-uart-port" title="Permanent link">⚓︎</a></h2>
-<h3 id="31-uart1-at-devttyths1">3.1. UART1 at <code>/dev/ttyTHS1</code><a class="headerlink" href="#31-uart1-at-devttyths1" title="Permanent link">⚓︎</a></h3>
+<h2 id="3-uart-config">3. UART Config<a class="headerlink" href="#3-uart-config" title="Permanent link">⚓︎</a></h2>
+<h3 id="31-uart1">3.1. UART1<a class="headerlink" href="#31-uart1" title="Permanent link">⚓︎</a></h3>
 <p>The stock Jetson Nano starts a console on the <code>/dev/ttyTHS1</code> serial port at startup through a service <code>/etc/systemd/nvgetty.sh</code> which launches <code>getty</code>. Note that normal <code>udev</code> rules will be overridden by the console while the service is running.</p>
 <p>To disable the console:</p>
 <div class="terminal"></div>
@@ -1053,7 +1021,7 @@ sudo apt install nano -y
 <span class="linenos" data-linenos="2 "></span>sudo systemctl disable nvgetty <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="linenos" data-linenos="3 "></span>sudo udevadm trigger
 </code></pre></div>
-<h3 id="32-uart2-at-devttys0">3.2. UART2 at <code>/dev/ttyS0</code><a class="headerlink" href="#32-uart2-at-devttys0" title="Permanent link">⚓︎</a></h3>
+<h3 id="32-uart2">3.2. UART2<a class="headerlink" href="#32-uart2" title="Permanent link">⚓︎</a></h3>
 <p>The debug serial interface is chosen at the startup of kernel. From L4T kernel 32.4.2+, the debug serial can be disabled through the command line options.</p>
 <p>Here is the log of boot up process which show the configuration file and the command line:</p>
 <div class="log"></div>
@@ -1119,7 +1087,7 @@ LABEL primary
 <p>After reboot, run below command to check if there is any <code>ttyS0</code> or <code>ttyTHSx</code> is running. It should not show any of them.</p>
 <div class="highlight"><pre><span></span><code>ps -aux <span class="p">|</span> grep tty
 </code></pre></div>
-<h3 id="33-add-permission">3.3. Add permission<a class="headerlink" href="#33-add-permission" title="Permanent link">⚓︎</a></h3>
+<h3 id="33-permission">3.3. Permission<a class="headerlink" href="#33-permission" title="Permanent link">⚓︎</a></h3>
 <p>To get rid of using <code>sudo</code> permission, add current user into the serial group.</p>
 <p>Run <code>ls -al /dev/tty*</code> to check the user group of <code>ttyS0</code>, <code>ttyTHS1</code>. Normally, it is needed to add current user into <code>tty</code> and <code>dialout</code> groups:</p>
 <div class="terminal"></div>
@@ -1127,8 +1095,7 @@ LABEL primary
 <span class="linenos" data-linenos="2 "></span>sudo usermod -a -G dialout <span class="nv">$USER</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="linenos" data-linenos="3 "></span>sudo reboot
 </code></pre></div>
-<h3 id="34-test-uart-ports">3.4. Test UART ports<a class="headerlink" href="#34-test-uart-ports" title="Permanent link">⚓︎</a></h3>
-<p>For testing, a serial terminal must be installed. Choose one of below.</p>
+<details class="info"><summary>Test UART ports</summary><p>For testing, a serial terminal must be installed. Choose one of below.</p>
 <p><strong>putty</strong></p>
 <div class="terminal"></div>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo apt install putty -y
@@ -1156,18 +1123,69 @@ LABEL primary
 <span class="linenos" data-linenos="2 "></span>screen /dev/ttyS0 <span class="m">115200</span>
 </code></pre></div>
 <p>Press <code>Ctrl-A K</code> to exit.</p>
+</details>
 <h2 id="4-wiring">4. Wiring<a class="headerlink" href="#4-wiring" title="Permanent link">⚓︎</a></h2>
 <p>Refer to below pinout diagram:</p>
 <p>
-<figure><img src="rover-wiring.drawio.svg" /><figcaption>Rover wiring</figcaption>
+<figure><img src="../design/rover-wiring.drawio.svg" /><figcaption>Rover wiring</figcaption>
 </figure>
 </p>
-<h2 id="5-add-nrf24l01p-driver">5. Add nRF24L01p driver<a class="headerlink" href="#5-add-nrf24l01p-driver" title="Permanent link">⚓︎</a></h2>
-<!--
-![nRF24 pinout](nrf24l01_pa_lna_pinout.jpg)
--->
+<div class="admonition caution">
+<p class="admonition-title">UART RX/TX problem</p>
+<p>Here is some reports showing that Jetson boards have problems on UART RX/TX pin when connecting that port directly to an other board.
+It maily causes by the capitive loading on the pin, if the loop-back test does not have any problem.</p>
+<p>If that problem happens, please add a 10K pull-down resister on RX/TX pin.</p>
+<p>Refer to <a href="https://forums.developer.nvidia.com/t/unreliable-serial-communcation-via-the-uart-tx-rx-gpio-pins/158249/27">Unreliable serial communcation via the UART TX/RX GPIO Pins</a>.</p>
+</div>
+<h2 id="5-serial-driver">5. Serial driver<a class="headerlink" href="#5-serial-driver" title="Permanent link">⚓︎</a></h2>
+<p>Download source code and build:</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/SerialPort.git <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">cd</span> SerialPort <span class="o">&amp;&amp;</span> <span class="se">\</span>
+make <span class="o">&amp;&amp;</span> <span class="se">\</span>
+sudo make install
+</code></pre></div>
+<p>An example to communicate with Serial port:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Serial library</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;serial/SerialPort.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<h3 id="23-install-driver">2.3. Install driver<a class="headerlink" href="#23-install-driver" title="Permanent link">⚓︎</a></h3>
+<span class="cp">#define SERIAL_PORT &quot;/dev/ttyS0&quot;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="w"> </span><span class="cm">/*int argc, char *argv[]*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">SerialPort</span><span class="w"> </span><span class="n">serial</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">errorOpening</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serial</span><span class="p">.</span><span class="n">openDevice</span><span class="p">(</span><span class="n">SERIAL_PORT</span><span class="p">,</span><span class="w"> </span><span class="mi">115200</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">errorOpening</span><span class="o">!=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">errorOpening</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Successful connection to %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">SERIAL_PORT</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Display ASCII characters (from 32 to 128)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">32</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="mi">128</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">serial</span><span class="p">.</span><span class="n">writeChar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">usleep</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Read lines and print them out</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">line</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serial</span><span class="p">.</span><span class="n">readBytes</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">line</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Close the serial device</span>
+<span class="w">    </span><span class="n">serial</span><span class="p">.</span><span class="n">closeDevice</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Compile and run:</p>
+<div class="highlight"><pre><span></span><code>g++ example.cpp -lserial -o example
+</code></pre></div>
+<h2 id="6-nrf24l01p-driver">6. nRF24L01p driver<a class="headerlink" href="#6-nrf24l01p-driver" title="Permanent link">⚓︎</a></h2>
 <p>Download source code from GitHub and build:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/RF24 <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> RF24 <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -1175,7 +1193,7 @@ LABEL primary
 make <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo make install
 </code></pre></div>
-<details class="note"><summary>Work with the original source code</summary><p>GitHub source code is at <a href="https://github.com/nRF24/RF24">https://github.com/nRF24/RF24</a>. <br />
+<details class="info"><summary>Work with the original source code</summary><p>GitHub source code is at <a href="https://github.com/nRF24/RF24">https://github.com/nRF24/RF24</a>. <br />
 The guide to install in Linux at <a href="https://nrf24.github.io/RF24/md_docs_linux_install.html">https://nrf24.github.io/RF24/md_docs_linux_install.html</a>.</p>
 <p>Download the <code>install.sh</code> file:</p>
 <div class="highlight"><pre><span></span><code>wget http://tmrh20.github.io/RF24Installer/RPi/install.sh
@@ -1218,9 +1236,10 @@ The guide to install in Linux at <a href="https://nrf24.github.io/RF24/md_docs_l
 <p>Refer: <a href="https://github.com/Seeed-Studio/seeed-linux-dtoverlays/commit/1a5db1bd54365b34175148c48dfb6adf4ce5a05b">spi: tegra: handle cs_change in modes sw_based_cs &amp; cs_gpios</a>.</p>
 </div>
 </details>
-<h3 id="24-example-app">2.4. Example app<a class="headerlink" href="#24-example-app" title="Permanent link">⚓︎</a></h3>
 <p>Source to test data receiving. Check the transferring site in <a href="../base/">Base</a>.</p>
-<details class="code"><summary>rf24_rx.cpp</summary><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">    // cin, cout, endl</span><span class="cp"></span>
+<div class="file"></div>
+<p>rf24_rx.cpp</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">    // cin, cout, endl</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span><span class="c1">      // CLOCK_MONOTONIC_RAW, timespec, clock_gettime()</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;RF24/RF24.h&gt;</span><span class="cp"></span>
 
@@ -1289,7 +1308,6 @@ The guide to install in Linux at <a href="https://nrf24.github.io/RF24/md_docs_l
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Received 1000000 bytes in &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">diff_sec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">diff_nsec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; seconds&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-</details>
 <p>Compile the source code:</p>
 <div class="highlight"><pre><span></span><code>g++ -Ofast -Wall -pthread  rf24_rx.cpp -lrf24 -o rf24_rx
 </code></pre></div>
@@ -1353,7 +1371,7 @@ Received 1000000 bytes in 28.488613531 seconds
 </code></pre></div>
 <p>The example receives 1 MB in 28.5 seconds, which means 35 KBps.
 While the transfer rate set on the channel is 1Mbps (equals 125 KBps), the example only achieve 28% of bandwidth.</p>
-<h2 id="3-add-oled-driver">3. Add OLED driver<a class="headerlink" href="#3-add-oled-driver" title="Permanent link">⚓︎</a></h2>
+<h2 id="7-oled-driver">7. OLED driver<a class="headerlink" href="#7-oled-driver" title="Permanent link">⚓︎</a></h2>
 <p>Download source code and build:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/OLED_SSD1306_I2C_Linux.git <span class="o">&amp;&amp;</span> <span class="se">\</span>
 <span class="nb">cd</span> OLED_SSD1306_I2C_Linux <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -1388,7 +1406,7 @@ sudo make install
 <div class="highlight"><pre><span></span><code>gcc progress_bar.c -lssd1306 -o progress_bar <span class="o">&amp;&amp;</span> <span class="se">\</span>
 ./progress_bar
 </code></pre></div>
-<h2 id="4-install-ros-melodic">4. Install ROS Melodic<a class="headerlink" href="#4-install-ros-melodic" title="Permanent link">⚓︎</a></h2>
+<h2 id="8-ros-melodic">8. ROS Melodic<a class="headerlink" href="#8-ros-melodic" title="Permanent link">⚓︎</a></h2>
 <p>Adding repository and source list</p>
 <div class="terminal"></div>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo apt-add-repository universe
@@ -1451,8 +1469,8 @@ sudo make install
 <span class="linenos" data-linenos="5 "></span>catkin_make
 </code></pre></div>
 <p>The workspace should be built successfully.</p>
-<h2 id="5-install-livox-sdk">5. Install Livox SDK<a class="headerlink" href="#5-install-livox-sdk" title="Permanent link">⚓︎</a></h2>
-<h3 id="51-dependencies">5.1. Dependencies<a class="headerlink" href="#51-dependencies" title="Permanent link">⚓︎</a></h3>
+<h2 id="9-livox-sdk">9. Livox SDK<a class="headerlink" href="#9-livox-sdk" title="Permanent link">⚓︎</a></h2>
+<h3 id="91-dependencies">9.1. Dependencies<a class="headerlink" href="#91-dependencies" title="Permanent link">⚓︎</a></h3>
 <p>Livox SDK needs to be built in the host machine, therefore, some tool-chain and build tools have to be installed.</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get update <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo apt-get install -y build-essential <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -1474,7 +1492,7 @@ sudo apt install -y ros-melodic-pcl-ros
 <div class="highlight"><pre><span></span><code>sudo ln -s /usr/bin/vtk6 /usr/bin/vtk <span class="o">&amp;&amp;</span> <span class="se">\</span>
 sudo ln -s /usr/lib/python2.7/dist-packages/vtk/libvtkRenderingPythonTkWidgets.aarch64-linux-gnu.so /usr/lib/aarch64-linux-gnu/libvtkRenderingPythonTkWidgets.so
 </code></pre></div>
-<h3 id="52-livox-sdk">5.2. Livox SDK<a class="headerlink" href="#52-livox-sdk" title="Permanent link">⚓︎</a></h3>
+<h3 id="92-livox-sdk">9.2. Livox SDK<a class="headerlink" href="#92-livox-sdk" title="Permanent link">⚓︎</a></h3>
 <p>The official guide is at <a href="https://github.com/Livox-SDK/Livox-SDK">https://github.com/Livox-SDK/Livox-SDK</a>.</p>
 <p>Livox SDK is the software development kit designed for all Livox products. It is developed based on C/C++ following Livox SDK Communication Protocol, and provides easy-to-use C style API. With Livox SDK, users can quickly connect to Livox products and receive point cloud data.</p>
 <p><strong>Installation</strong></p>
@@ -1492,7 +1510,7 @@ sudo make install
 -- Installing: /usr/local/include/livox_def.h
 -- Installing: /usr/local/include/livox_sdk.h
 </code></pre></div>
-<h2 id="6-install-livox-ros-driver">6. Install Livox ROS driver<a class="headerlink" href="#6-install-livox-ros-driver" title="Permanent link">⚓︎</a></h2>
+<h2 id="10-livox-ros-driver">10. Livox ROS driver<a class="headerlink" href="#10-livox-ros-driver" title="Permanent link">⚓︎</a></h2>
 <p>Get <code>livox_ros_driver</code> from GitHub</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/Livox-SDK/livox_ros_driver.git ws_livox/src
 </code></pre></div>
@@ -1526,7 +1544,7 @@ uint8 reflectivity      <span class="c1"># reflectivity, 0~255</span>
 uint8 tag               <span class="c1"># livox tag</span>
 uint8 line              <span class="c1"># laser number in lidar</span>
 </code></pre></div>
-<h3 id="61-configurations">6.1. Configurations<a class="headerlink" href="#61-configurations" title="Permanent link">⚓︎</a></h3>
+<h3 id="101-configurations">10.1. Configurations<a class="headerlink" href="#101-configurations" title="Permanent link">⚓︎</a></h3>
 <p>The configuration file is in <code>ws_livox/src/livox_ros_driver/config</code>.</p>
 <p><strong>LiDAR's configuration parameter</strong></p>
 <table>
@@ -1643,14 +1661,14 @@ uint8 line              <span class="c1"># laser number in lidar</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="62-timestamp">6.2. Timestamp<a class="headerlink" href="#62-timestamp" title="Permanent link">⚓︎</a></h3>
+<h3 id="102-timestamp">10.2. Timestamp<a class="headerlink" href="#102-timestamp" title="Permanent link">⚓︎</a></h3>
 <p>Prepare a GPS device to ensure that the GPS can output UTC time information in GPRMC/GNRMC format through the serial port or USB virtual serial port, and support PPS signal output.</p>
 <ol>
 <li>Connect the GPS serial port to the host running <code>livox_ros_driver</code>, set the corresponding device name in the config file</li>
 <li>Connect the GPS PPS signal line to LiDAR</li>
 <li>Be sure to set the output frequency of GPRMC/GNRMC time information of GPS to 1Hz</li>
 </ol>
-<h3 id="63-launches">6.3. Launches<a class="headerlink" href="#63-launches" title="Permanent link">⚓︎</a></h3>
+<h3 id="103-launches">10.3. Launches<a class="headerlink" href="#103-launches" title="Permanent link">⚓︎</a></h3>
 <p>Different launch files have different configuration parameter values and are used in different scenarios:</p>
 <table>
 <thead>
@@ -1701,7 +1719,7 @@ uint8 line              <span class="c1"># laser number in lidar</span>
 </tr>
 </tbody>
 </table>
-<h3 id="64-test-ros">6.4. Test ROS<a class="headerlink" href="#64-test-ros" title="Permanent link">⚓︎</a></h3>
+<h3 id="104-test-ros">10.4. Test ROS<a class="headerlink" href="#104-test-ros" title="Permanent link">⚓︎</a></h3>
 <p>An easy method to connect Livox Lidar with Jetson board is through a LAN router. Below section shows another method to connect 2 modules directly.</p>
 <p><strong>Set Livox's Static IP</strong></p>
 <p>Use Livox Viewer to set a Static IP for the Lidar module. Livox only accepts IP in <code>192.168.1.0</code> network.</p>
@@ -1725,7 +1743,7 @@ source ./devel/setup.bash
 roslaunch livox_ros_driver livox_lidar_rviz.launch
 </code></pre></div>
 <p>This will run Livox ROS and Rviz to visualize the received pointcloud.</p>
-<h2 id="7-auto-mount-usb">7. Auto-mount USB<a class="headerlink" href="#7-auto-mount-usb" title="Permanent link">⚓︎</a></h2>
+<h2 id="11-auto-mount-usb">11. Auto-mount USB<a class="headerlink" href="#11-auto-mount-usb" title="Permanent link">⚓︎</a></h2>
 <p>Check out and install:</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vuquangtrong/USB_Automount.git
 <span class="nb">cd</span> USB_Automount
@@ -1870,7 +1888,7 @@ sudo systemctl daemon-reload
 <p>If a USB is not mount automatically, check the system log:</p>
 <div class="highlight"><pre><span></span><code>cat /var/log/syslog
 </code></pre></div>
-<h2 id="8-auto-start-application">8. Auto-start application<a class="headerlink" href="#8-auto-start-application" title="Permanent link">⚓︎</a></h2>
+<h2 id="12-auto-start-application">12. Auto-start application<a class="headerlink" href="#12-auto-start-application" title="Permanent link">⚓︎</a></h2>
 <p>A simple app that shows IP Address on OLED screen.</p>
 <div class="file"></div>
 <p>ipshow.cpp</p>
@@ -2021,10 +2039,12 @@ sudo systemctl daemon-reload
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -2058,10 +2078,10 @@ sudo systemctl daemon-reload
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
         <script src="../assets/view-bigimg.js"></script>
       

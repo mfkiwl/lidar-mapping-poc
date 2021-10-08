@@ -26,7 +26,7 @@
         <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/notes/">
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.8">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.92558b1b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -94,7 +94,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Lidar Mapping (PoC)" class="md-header__button md-logo" aria-label="Lidar Mapping (PoC)" data-md-component="logo">
       
@@ -179,11 +181,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -472,6 +477,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#10-submodule-in-git" class="md-nav__link">
+    10. Submodule in Git
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -562,6 +574,13 @@
         <li class="md-nav__item">
   <a href="#9-install-visual-studio-code" class="md-nav__link">
     9. Install Visual Studio Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-submodule-in-git" class="md-nav__link">
+    10. Submodule in Git
   </a>
   
 </li>
@@ -733,6 +752,11 @@ sudo cp libssd1306.so /usr/local/lib
 sudo apt install ./vscode-linux-deb.arm64.deb
 rm vscode-linux-deb.arm64.deb
 </code></pre></div>
+<h2 id="10-submodule-in-git">10. Submodule in Git<a class="headerlink" href="#10-submodule-in-git" title="Permanent link">⚓︎</a></h2>
+<p><div class="highlight"><pre><span></span><code>git submodule add &lt;remote_url&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git submodule deinit &lt;submodule_name&gt;
+</code></pre></div></p>
     
 
               
@@ -778,10 +802,12 @@ rm vscode-linux-deb.arm64.deb
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -815,10 +841,10 @@ rm vscode-linux-deb.arm64.deb
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.94ec81fe.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.48dfec6c.min.js"></script>
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
         <script src="../assets/view-bigimg.js"></script>
       
