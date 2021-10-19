@@ -1,0 +1,9 @@
+[submodule "packages/SerialPort"]
+	path = packages/SerialPort
+	url = https://github.com/vuquangtrong/SerialPort.git
+[submodule "packages/RF24"]
+	path = packages/RF24
+	url = https://github.com/vuquangtrong/RF24.git
+[submodule "packages/OLED_SSD1306_I2C_Linux"]
+	path = packages/OLED_SSD1306_I2C_Linux
+	url = https://github.com/vuquangtrong/OLED_SSD1306_I2C_Linux.git
