@@ -10,9 +10,11 @@
 using namespace std;
 
 // hardware configs
-#define GNSS_DEV 		"/dev/ttyS0"	// 
-#define RF24_CE_PIN 	15 				// sys_gpio
-#define OLED_DEV		"/dev/i2c-0"	//
+#define GNSS_DEV 			"/dev/ttyS0"	//
+#define GNSS_MSG_LEN_MAX	1024            // bytes
+#define GNSS_MSG_TIMEOUT	5000            // ms
+#define RF24_CE_PIN 		15 				// sys_gpio
+#define OLED_DEV			"/dev/i2c-1"	//
 
 // system status
 uint32_t rxGnss = 0;
@@ -43,10 +45,29 @@ vector<string> stringSplit(const string &s, const char delimiter)
     return tokens;
 }
 
+// send GNNS command
+void GnssSendCommand(SerialPort& gnss, const char* command, char* response)
+{
+	cout << command << endl;
+	gnss.writeString(command);
+	gnss.writeString("\r\n");
+	gnss.readString(response, '\n', GNSS_MSG_LEN_MAX, GNSS_MSG_TIMEOUT);
+	cout << response;
+}
+
+// read response from GNSS
+void GnssReadString(SerialPort& gnss, char* response)
+{
+	gnss.readString(response, '\n', GNSS_MSG_LEN_MAX, GNSS_MSG_TIMEOUT);
+	cout << response;
+}
+
 // forward gnss rtcm message to radio
 void DataForwardingThread() {
 	// GNSS port
 	SerialPort gnss;
+	bool base_fixed = false;
+	char response[GNSS_MSG_LEN_MAX] = {0};
 
 	// try to connect to gnss
 	char ret = gnss.openDevice(GNSS_DEV, 115200);
@@ -57,22 +78,32 @@ void DataForwardingThread() {
 
     cout << "Connected to " << GNSS_DEV << "!" << endl;
 
-    bool base_fixed = false;
+	GnssSendCommand(gnss, "unlog", response);
+
+	GnssSendCommand(gnss, "versiona", response);
+	GnssReadString(gnss, response);
 
     while(!base_fixed) {
 	    // set GNSS as a base
-	    gnss.writeString("mode base time 60 1.0 2.0\r\n");
+		GnssSendCommand(gnss, "mode base time 60 1.0 2.0", response);
 
 	    // wait for base coordinate
-	    this_thread::sleep_for(chrono::seconds(60));
+		for(int i=0; i<=60; i++) {
+		    this_thread::sleep_for(chrono::seconds(1));
+			cout << "\rwaiting " << i << "/60";
+		}
+		cout << endl;
+
+		//gnss.flushReceiver();
+		while(gnss.available()) {
+			GnssReadString(gnss, response);
+		}
 
 	    // query position
-	    gnss.flushReceiver();
-	    gnss.writeString("gngga\r\n");
+	    GnssSendCommand(gnss, "gngga", response);
 
 	    // read response
-	    char response[128] = {0};
-	    gnss.readString(response, '\n', 128, 5000); // timeout in 5000 ms
+	    GnssReadString(gnss, response);
 
 	    // expected
 	    // $GNGGA,090031.00,2057.59811809,N,10546.17292292,E,1,18,2.2,16.4378,M,-28.2478,M,,*64
@@ -93,12 +124,12 @@ void DataForwardingThread() {
 	}
 
     // query RTCM
-    gnss.writeString("rtcm1006 10\r\n"); // Base station antenna
-    gnss.writeString("rtcm1033 10\r\n"); // Description of receiver
-    gnss.writeString("rtcm1074 1\r\n");  // GPS system correction data
-    gnss.writeString("rtcm1124 1\r\n");  // BDS system correction data
-    gnss.writeString("rtcm1084 1\r\n");  // Glonass system correction data
-    gnss.writeString("rtcm1094 1\r\n");  // Galileo system correction data
+    GnssSendCommand(gnss, "rtcm1006 10", response); // Base station antenna
+    GnssSendCommand(gnss, "rtcm1033 10", response); // Description of receiver
+    GnssSendCommand(gnss, "rtcm1074 1", response);  // GPS system correction data
+    GnssSendCommand(gnss, "rtcm1124 1", response);  // BDS system correction data
+    GnssSendCommand(gnss, "rtcm1084 1", response);  // Glonass system correction data
+    GnssSendCommand(gnss, "rtcm1094 1", response);  // Galileo system correction data
 
 	// RF24 transmitter
 	/* CE = use a sys_gpio pin
@@ -166,15 +197,15 @@ void SystemStatusThread() {
 		SSD1306_Clear();
 
 		// show Base location
-		sprintf(line_1, "%8.4f/%8.4f", latitude, longitude);
-		SSD1306_WriteString(0, 10, line_1, &Font_7x10, SSD1306_WHITE, SSD1306_OVERRIDE);
+		sprintf(line_1, "P:%.4f, %.4f", latitude, longitude);
+		SSD1306_WriteString(0, 0, line_1, &Font_7x10, SSD1306_WHITE, SSD1306_OVERRIDE);
 
 		// statistic data
-		sprintf(line_2, "RX:%d", rxGnss);
-		SSD1306_WriteString(0, 20, line_2, &Font_7x10, SSD1306_WHITE, SSD1306_OVERRIDE);
+		sprintf(line_2, "R:%d", rxGnss);
+		SSD1306_WriteString(0, 10, line_2, &Font_7x10, SSD1306_WHITE, SSD1306_OVERRIDE);
 
-		sprintf(line_3, "TX:%d", txRadio);
-		SSD1306_WriteString(0, 30, line_3, &Font_7x10, SSD1306_WHITE, SSD1306_OVERRIDE);
+		sprintf(line_3, "T:%d", txRadio);
+		SSD1306_WriteString(0, 20, line_3, &Font_7x10, SSD1306_WHITE, SSD1306_OVERRIDE);
 
 		// update every second
 		SSD1306_Screen_Update();
