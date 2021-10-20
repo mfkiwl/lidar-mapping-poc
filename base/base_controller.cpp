@@ -13,7 +13,7 @@ using namespace std;
 #define GNSS_DEV 			"/dev/ttyS0"	//
 #define GNSS_MSG_LEN_MAX	1024            // bytes
 #define GNSS_MSG_TIMEOUT	5000            // ms
-#define RF24_CE_PIN 		15 				// sys_gpio
+#define RF24_CE_PIN 		24 				// sys_gpio
 #define OLED_DEV			"/dev/i2c-1"	//
 
 // system status
@@ -173,7 +173,7 @@ void DataForwardingThread() {
     	rxGnss += rxRead;
 
     	// send on radio
-        txSent = radio.write(&payload, rxRead);
+        txSent = radio.write(payload, rxRead);
         if(txSent) {
         	txRadio += rxRead;
         }
