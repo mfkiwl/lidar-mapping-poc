@@ -45,6 +45,23 @@ vector<string> stringSplit(const string &s, const char delimiter)
     return tokens;
 }
 
+// convert NMEA DDmm.mm format to deciamal D.d format
+double convertNmeaToDouble(const std::string &val, const std::string &dir) {
+    int dot = val.find('.');
+    std::string degree = val.substr(0, dot-2);
+    std::string minute = val.substr(dot-2);
+
+    // ROS_INFO_STREAM("convertNmeaToDouble: " << degree << " / " << minute);
+
+    double ret = stringToNum<double>(degree) + stringToNum<double>(minute)/60;
+
+    if (dir == "S" || dir == "W") {
+        ret = -ret;
+    }
+
+    return ret;
+}
+
 // send GNNS command
 void GnssSendCommand(SerialPort& gnss, const char* command, char* response)
 {
@@ -111,10 +128,10 @@ void DataForwardingThread() {
 		    vector<string> message = stringSplit(response, ',');
 		    if (message[0] == "$GNGGA" && message[2] != "" && message[4] != "")
 		    {
-		    	latitude = stringToNum<double>(message[2]);
-		    	longitude = stringToNum<double>(message[4]);
+		    	latitude = convertNmeaToDouble(message[2], message[3]);
+		    	longitude = convertNmeaToDouble(message[4], message[5]);
 
-		    	cout << "Base location:" << setprecision(20) << latitude << "," << longitude << endl;
+		    	cout << "Base location: " << setprecision(20) << latitude << ", " << longitude << endl;
 
 		    	base_fixed = true;
 		    } else {
