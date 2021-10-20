@@ -1,0 +1,11 @@
+[Unit]
+Description=Rover Controller
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rover_controller
+
+[Install]
+WantedBy=multi-user.target
+
