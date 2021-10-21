@@ -26,7 +26,7 @@
         <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/notes/">
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -326,8 +326,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../rover/" class="md-nav__link">
-        Rover
+      <a href="../base/" class="md-nav__link">
+        Base station
       </a>
     </li>
   
@@ -341,8 +341,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
-        Base station
+      <a href="../rover/" class="md-nav__link">
+        Rover
       </a>
     </li>
   
@@ -471,8 +471,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-install-visual-studio-code" class="md-nav__link">
-    9. Install Visual Studio Code
+  <a href="#9-visual-studio-code" class="md-nav__link">
+    9. Visual Studio Code
   </a>
   
 </li>
@@ -572,8 +572,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-install-visual-studio-code" class="md-nav__link">
-    9. Install Visual Studio Code
+  <a href="#9-visual-studio-code" class="md-nav__link">
+    9. Visual Studio Code
   </a>
   
 </li>
@@ -747,16 +747,64 @@ sudo cp libssd1306.so /usr/local/lib
 <p>The format the partition:</p>
 <div class="highlight"><pre><span></span><code>sudo mkfs.ext4 /dev/sdxy
 </code></pre></div>
-<h2 id="9-install-visual-studio-code">9. Install Visual Studio Code<a class="headerlink" href="#9-install-visual-studio-code" title="Permanent link">⚓︎</a></h2>
-<div class="highlight"><pre><span></span><code>wget -N -O vscode-linux-deb.arm64.deb https://update.code.visualstudio.com/latest/linux-deb-arm64/stable
-sudo apt install ./vscode-linux-deb.arm64.deb
-rm vscode-linux-deb.arm64.deb
+<h2 id="9-visual-studio-code">9. Visual Studio Code<a class="headerlink" href="#9-visual-studio-code" title="Permanent link">⚓︎</a></h2>
+<p>Install:</p>
+<div class="highlight"><pre><span></span><code>wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &gt; packages.microsoft.gpg
+
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+
+sudo sh -c &#39;echo &quot;deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main&quot; &gt; /etc/apt/sources.list.d/vscode.list&#39;
+
+rm -f packages.microsoft.gpg
+
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code
+</code></pre></div>
+<p>Plugins:</p>
+<ul>
+<li>Sublime Text key map</li>
+<li>C/C++</li>
+</ul>
+<p>Configs:</p>
+<div class="file"></div>
+<p>.vscodec_cpp_properties.json</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;configurations&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;browse&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;databaseFilename&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;limitSymbolsToIncludedHeaders&quot;</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;includePath&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;${workspaceFolder}/devel/include&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;/opt/ros/melodic/include/**&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;/usr/include/**&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;${workspaceFolder}/**&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ROS&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;configurationProvider&quot;</span><span class="p">:</span> <span class="s2">&quot;ms-vscode.cmake-tools&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="10-submodule-in-git">10. Submodule in Git<a class="headerlink" href="#10-submodule-in-git" title="Permanent link">⚓︎</a></h2>
-<p><div class="highlight"><pre><span></span><code>git submodule add &lt;remote_url&gt;
+<p>Add a new module:</p>
+<div class="highlight"><pre><span></span><code>git submodule add &lt;remote_url&gt;
 </code></pre></div>
+<p>Initialize submodule:</p>
+<div class="highlight"><pre><span></span><code>git submodule init
+</code></pre></div>
+<p>Download submodule after initializing:</p>
+<div class="highlight"><pre><span></span><code>git submodule update
+</code></pre></div>
+<p>Remove a module:</p>
 <div class="highlight"><pre><span></span><code>git submodule deinit &lt;submodule_name&gt;
-</code></pre></div></p>
+</code></pre></div>
+<p>Clone and download all submodules:</p>
+<div class="highlight"><pre><span></span><code>git clone --recursive &lt;repo_url&gt;
+</code></pre></div>
     
 
               
@@ -841,10 +889,10 @@ rm vscode-linux-deb.arm64.deb
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
         <script src="../assets/view-bigimg.js"></script>
       

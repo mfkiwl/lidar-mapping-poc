@@ -26,7 +26,7 @@
         <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/gnss/">
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -83,6 +83,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#1-general" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -298,9 +303,92 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GNSS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         GNSS
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-general" class="md-nav__link">
+    1. General
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-commands" class="md-nav__link">
+    2. Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-setup-ntrip-client" class="md-nav__link">
+    2.1. Setup NTRIP client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rtk-performance" class="md-nav__link">
+    2.2. RTK performance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-some-issues" class="md-nav__link">
+    2.3. Some issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ub4b0-on-base" class="md-nav__link">
+    3. UB4B0 on Base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ub482-on-rover" class="md-nav__link">
+    4. UB482 on Rover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-appendix" class="md-nav__link">
+    5. Appendix
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -329,8 +417,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../rover/" class="md-nav__link">
-        Rover
+      <a href="../base/" class="md-nav__link">
+        Base station
       </a>
     </li>
   
@@ -344,8 +432,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
-        Base station
+      <a href="../rover/" class="md-nav__link">
+        Rover
       </a>
     </li>
   
@@ -403,6 +491,91 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-general" class="md-nav__link">
+    1. General
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-commands" class="md-nav__link">
+    2. Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-setup-ntrip-client" class="md-nav__link">
+    2.1. Setup NTRIP client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rtk-performance" class="md-nav__link">
+    2.2. RTK performance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-some-issues" class="md-nav__link">
+    2.3. Some issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ub4b0-on-base" class="md-nav__link">
+    3. UB4B0 on Base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ub482-on-rover" class="md-nav__link">
+    4. UB482 on Rover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-appendix" class="md-nav__link">
+    5. Appendix
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -412,7 +585,197 @@
         <p class="page-description">Setting logs to use GNSS modules in Rover and Base station</p>
         <br>
         <hr>
-        
+        <h2 id="1-general">1. General<a class="headerlink" href="#1-general" title="Permanent link">⚓︎</a></h2>
+<p><strong>Key features</strong></p>
+<ul>
+<li>All-constellation multi-frequency high-precision RTK and heading board, support BDS B1I/B2I + GPSL1/L2+GLONASS L1/L2+Galileo E1/E5b+QZSS L1/L2</li>
+<li>Precise RTK positioning and heading</li>
+<li>Fast RTK Initialization time &lt; 5s. As tested, RTK Float status is acquired in 5s, but RTK Fix status needs more time.</li>
+<li>20Hz data output rate</li>
+<li>Adaptive recognition of RTCM input data format</li>
+</ul>
+<p><strong>Accuracy</strong></p>
+<ul>
+<li>Single point: H = 1.5 m, V = 2.5 m</li>
+<li>DGPS &amp; SAAB: H = 0.4 m, V = 0.8 m</li>
+<li>RTK: H = 1 cm, V = 1.5 m (RTK Fix only)</li>
+</ul>
+<p><strong>Operation conditions</strong></p>
+<p>All I/O pins are LV-TTL Level.</p>
+<p>The module needs a stable power source, from 3.3 V to 5 V, with ripple rate is &lt; 50 mA. Be aware that if connect to 3.3 V power, the drop voltage may happen and board will not work.</p>
+<p>It is recommended to use a power chip with current output capacity greater than 2A to power the board. Power consumption may reach 2.6 W.</p>
+<p><strong>UPrecise GUI</strong></p>
+<p>UPrecise software provides a graphical interface to control and display the operation of the receiver.</p>
+<p>
+<figure><img src="uprecise.png" /><figcaption>UPrecise GUI</figcaption>
+</figure>
+</p>
+<p>Right after connecting to the board though a UART port, UPrecise sends some commands as below:</p>
+<div class="highlight"><pre><span></span><code>unlog     <span class="c1"># stop print out all logs</span>
+gngga <span class="m">1</span>   <span class="c1"># log position</span>
+gngsv <span class="m">1</span>   <span class="c1"># log satellite in view</span>
+</code></pre></div>
+<h2 id="2-commands">2. Commands<a class="headerlink" href="#2-commands" title="Permanent link">⚓︎</a></h2>
+<p><strong>Reset</strong></p>
+<p>Factory reset, clear all user configurations:</p>
+<div class="highlight"><pre><span></span><code>freset
+</code></pre></div>
+<p>System reset:</p>
+<div class="highlight"><pre><span></span><code>reset
+</code></pre></div>
+<p><strong>Information</strong></p>
+<p>Read version:</p>
+<div class="highlight"><pre><span></span><code>versiona
+</code></pre></div>
+<div class="log"></div>
+<div class="highlight"><pre><span></span><code>#VERSIONA,90,GPS,FINE,2171,345750000,0,0,18,28;&quot;UB482&quot;,&quot;R3.00Build20655&quot;,&quot;B123G12R12E15bS1Z12-HRBMDFS0011N1-S20-P20-A3L:2120/Jan/6&quot;,&quot;2330319000062-GN1201212700556&quot;,&quot;1432034796888&quot;,&quot;2019/Aug/27&quot;*cf090e25
+</code></pre></div>
+<p>Check antennas:</p>
+<div class="highlight"><pre><span></span><code>antennaa
+</code></pre></div>
+<div class="log"></div>
+<div class="highlight"><pre><span></span><code>#ANTENNAA,COM2,0,93.0,FINE,2171,347565.800,793915,4,18;ON,ON,OFF,0*ff8fa62e
+</code></pre></div>
+<p><strong>Configuration</strong></p>
+<p>Get current settings:</p>
+<div class="highlight"><pre><span></span><code>config
+</code></pre></div>
+<div class="log"></div>
+<div class="highlight"><pre><span></span><code>$command,config,response: OK*54
+$CONFIG,COM1,CONFIG COM1 115200*23
+$CONFIG,COM2,CONFIG COM2 115200*23
+$CONFIG,COM3,CONFIG COM3 115200*23
+$CONFIG,PPS,CONFIG PPS ENABLE GPS POSITIVE 500000 1000 0 0*6E
+$CONFIG,INS,CONFIG INS DISABLE*70
+$CONFIG,INS,CONFIG INS ANGLE 0,0,0*75
+$CONFIG,INS,CONFIG INS ALIGNMENTVEL 5.0*2F
+$CONFIG,INS,CONFIG INS TIMEOUT 200*6D
+$CONFIG,INS,CONFIG IMUTOANT OFFSET 0 0 0 0 0 0*6C
+$CONFIG,INS,CONFIG IMUTOANT2 OFFSET 0 0 0 0 0 0*5E
+$CONFIG,INS,CONFIG INSSOL OFFSET 0.0 0.0 0.0*77
+$CONFIG,UNDULATION,CONFIG UNDULATION AUTO*2B
+$CONFIG,EVENT,CONFIG EVENT DISABLE*70
+$CONFIG,DGPSTIMEOUT,CONFIG DGPS TIMEOUT 300*37
+$CONFIG,RTKTIMEOUT,CONFIG RTK TIMEOUT 100*35
+$CONFIG,HEADING,CONFIG HEADING FIXLENGTH*6F
+$CONFIG,PSRSMOOTH,CONFIG PSRSMOOTH DISABLE*70
+</code></pre></div>
+<p>Save settings:</p>
+<div class="highlight"><pre><span></span><code>saveconfig
+</code></pre></div>
+<p>Get current mode:</p>
+<div class="highlight"><pre><span></span><code>mode
+</code></pre></div>
+<div class="log"></div>
+<div class="highlight"><pre><span></span><code>#MODE,94,GPS,FINE,2171,345803000,0,0,18,982;mode rover,HEADINGMODE FIXLENGTH*2F
+</code></pre></div>
+<p>By default, after factory reset, receiver will work in Rover Dynamic mode, which is the same as the below config:</p>
+<div class="highlight"><pre><span></span><code>mode rover
+</code></pre></div>
+<p>The receiver will automatically start RTK positioning when receiving correction data from any serial ports.</p>
+<p><strong>NMEA Messages</strong></p>
+<p>Get Position:</p>
+<div class="highlight"><pre><span></span><code>gngga &lt;period&gt;
+</code></pre></div>
+<p>Get satellites in view:</p>
+<div class="highlight"><pre><span></span><code>gngsv &lt;period&gt;
+</code></pre></div>
+<p>Get heading:</p>
+<div class="highlight"><pre><span></span><code>gphdt &lt;period&gt;
+</code></pre></div>
+<p>Get timestamp:</p>
+<div class="highlight"><pre><span></span><code>gnrmc &lt;period&gt;
+</code></pre></div>
+<h3 id="21-setup-ntrip-client">2.1. Setup NTRIP client<a class="headerlink" href="#21-setup-ntrip-client" title="Permanent link">⚓︎</a></h3>
+<p>The site <rtk2go.com> hosts free mount points for NTRIP casters. Accessing <rtk2go.com:2101> will get a list of casters. A NTRIP client can access to its via either URL at <code>rtk2go.com:2101</code> or via IP Address at <code>3.16.214.124:2101</code>.</p>
+<p>The open source <rtklib.com> has a tool <code>STRSVR</code> to stream NTRIP data from a caster. It firstly lists the available mount points to select, and then can forward the data stream to the UB482's COM2 (displayed as a COMx in host PC).</p>
+<div class="admonition info no-title">
+<p class="admonition-title">&nbsp;</p>
+<p>The COM2 has to be set at high baudrate to be able to get correction message quickly:</p>
+<div class="highlight"><pre><span></span><code>config com2 <span class="m">460800</span>
+</code></pre></div>
+</div>
+<p>
+<figure><img src="rtlkllib_strsvr.png" /><figcaption>RTKLib Stream Server</figcaption>
+</figure>
+</p>
+<h3 id="22-rtk-performance">2.2. RTK performance<a class="headerlink" href="#22-rtk-performance" title="Permanent link">⚓︎</a></h3>
+<p>Right after UB482 gets correction messages from NTRIP from its COM2 port:</p>
+<ul>
+<li>take 2 seconds to get DGPS/ SAAB accuracy (meter)</li>
+<li>take 5 seconds to get RTK Float accuracy (decimeter)</li>
+<li>take 5 minutes to get RTK Fix accuracy (centimeter)</li>
+</ul>
+<p>
+<figure><img src="rtk_fix.png" /><figcaption>RTK Fix accuracy</figcaption>
+</figure>
+</p>
+<h3 id="23-some-issues">2.3. Some issues<a class="headerlink" href="#23-some-issues" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>
+<p>Sometimes, system stays in RTK Float, and there is no RTK Fix in long time</p>
+<p>--&gt; Need to check the conditions</p>
+</li>
+<li>
+<p>In Rover mode, there is no way to export raw observation data to use in post-processing. RTCM messages are only printed out in Base mode.</p>
+<p>--&gt; Unicore data has some observation messages. Need to check if they can be used for post-processing.</p>
+</li>
+<li>
+<p>There are some commands which do not work event are listed in UPrecise or in documents:</p>
+<ul>
+<li>
+<p>Command <code>interfacemode com2 rtcmv3 unicore on</code> returns wrong syntax.</p>
+</li>
+<li>
+<p>Turning on IMU with <code>config ins enable</code> returns OK, but running <code>rawimua</code> returns an Unknown IMU type.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-ub4b0-on-base">3. UB4B0 on Base<a class="headerlink" href="#3-ub4b0-on-base" title="Permanent link">⚓︎</a></h2>
+<p>For RTK base station (fixed base station), the antenna is placed at a known coordinate
+with no changes during the whole use. Meanwhile, the precise coordinates of the known measurement station and the received satellite information will be sent to rover (yet to be positioned) by RTCM protocol directly or after processing.</p>
+<p><strong>Communication</strong></p>
+<p>RTCM message will be available on the COM1, at 115200 bps (8N1).</p>
+<p><strong>Base's coordinate</strong></p>
+<p>Since the base coordinate is unknown, Base will be set to self-optimization mode:</p>
+<div class="highlight"><pre><span></span><code>mode base <span class="nb">time</span> <span class="m">60</span> <span class="m">1</span>.0 <span class="m">2</span>.0
+</code></pre></div>
+<p>the command means:</p>
+<blockquote>
+<p>Within <em>60</em> seconds or when the standard deviation of horizontal position is less than <em>1.0</em> m and that of vertical position is less than <em>2.0</em> m, set the average position as the base's coordinate.</p>
+</blockquote>
+<p>Trigger below command once to get Base coordinate:</p>
+<div class="highlight"><pre><span></span><code>gngga
+</code></pre></div>
+<p><strong>RTCM output</strong></p>
+<p>Send below commands to get RTCM info:</p>
+<div class="highlight"><pre><span></span><code>rtcm1006 com1 <span class="m">10</span> <span class="c1"># Base station antenna</span>
+rtcm1033 com1 <span class="m">10</span> <span class="c1"># Description of receiver</span>
+rtcm1074 com1 <span class="m">1</span>  <span class="c1"># GPS system correction data</span>
+rtcm1124 com1 <span class="m">1</span>  <span class="c1"># BDS system correction data</span>
+rtcm1084 com1 <span class="m">1</span>  <span class="c1"># Glonass system correction data</span>
+rtcm1094 com1 <span class="m">1</span>  <span class="c1"># Galileo system correction data</span>
+</code></pre></div>
+<h2 id="4-ub482-on-rover">4. UB482 on Rover<a class="headerlink" href="#4-ub482-on-rover" title="Permanent link">⚓︎</a></h2>
+<p>Rover Station receives the real-time differential correction data from the base station. Rover can automatically recognize the RTCM data and perform RTK solution.</p>
+<p>There are three kinds of RTK mode: <em>static mode</em>, <em>dynamic mode</em> and <em>automatic mode</em>. The default setting is dynamic mode. The receiver will automatically start RTK positioning when receiving correction data from any serial ports.</p>
+<div class="highlight"><pre><span></span><code>mode rover
+</code></pre></div>
+<p><strong>GNGGA output</strong></p>
+<p>The position information should be sent on COM2 every second:</p>
+<div class="highlight"><pre><span></span><code>gngga com2 <span class="m">1</span>
+</code></pre></div>
+<p>The output frequency can be set up to 20 Hz:</p>
+<div class="highlight"><pre><span></span><code>gngga com2 <span class="m">0</span>.05
+</code></pre></div>
+<p><strong>GPRMC output</strong></p>
+<p>The datetime information should be sent on COM3 every second:</p>
+<div class="highlight"><pre><span></span><code>gprmc com3 <span class="m">1</span>
+</code></pre></div>
+<h2 id="5-appendix">5. Appendix<a class="headerlink" href="#5-appendix" title="Permanent link">⚓︎</a></h2>
+<p><a href="https://emlid.com">Emlid</a> provides RTK GNSS modules such as REACH M+ (at $265) which use U-Blox GNSS module and an integrated IMU. These modules support raw output for post-processing. A cheaper module named <a href="https://navio2.emlid.com/">Navio2</a> is a good choice for an Autopilot HAT on Raspberry Pi.</p>
+<p>Emlid also provides free <a href="https://emlid.com/ntrip-caster/">NTRIP Caster</a> mount points to send corrections over the internet. It is similar to <a href="https://rtk2go.com">rtk2go</a>.</p>
     
 
               
@@ -512,10 +875,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
         <script src="../assets/view-bigimg.js"></script>
       

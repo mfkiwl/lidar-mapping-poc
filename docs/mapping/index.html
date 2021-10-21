@@ -26,7 +26,7 @@
         <link rel="canonical" href="https://www.codeinsideout.com/lidar-mapping-poc/mapping/">
       
       <link rel="icon" href="../favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -83,6 +83,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#1-the-mapping-package" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -321,8 +326,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../rover/" class="md-nav__link">
-        Rover
+      <a href="../base/" class="md-nav__link">
+        Base station
       </a>
     </li>
   
@@ -336,8 +341,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../base/" class="md-nav__link">
-        Base station
+      <a href="../rover/" class="md-nav__link">
+        Rover
       </a>
     </li>
   
@@ -358,9 +363,105 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Mapping
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Mapping
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-mapping-package" class="md-nav__link">
+    1. The mapping package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-controllers" class="md-nav__link">
+    2. Controllers
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Controllers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-base-controller" class="md-nav__link">
+    2.1. Base Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rover-controller" class="md-nav__link">
+    2.2. Rover Controller
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ros-packages" class="md-nav__link">
+    3. ROS packages
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ROS packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-livox-driver" class="md-nav__link">
+    3.1. Livox Driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-gnss-parser" class="md-nav__link">
+    3.2. GNSS Parser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-imu-parser" class="md-nav__link">
+    3.3. IMU Parser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-mapper" class="md-nav__link">
+    3.4. Mapper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -403,6 +504,104 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-mapping-package" class="md-nav__link">
+    1. The mapping package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-controllers" class="md-nav__link">
+    2. Controllers
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Controllers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-base-controller" class="md-nav__link">
+    2.1. Base Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-rover-controller" class="md-nav__link">
+    2.2. Rover Controller
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ros-packages" class="md-nav__link">
+    3. ROS packages
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ROS packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-livox-driver" class="md-nav__link">
+    3.1. Livox Driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-gnss-parser" class="md-nav__link">
+    3.2. GNSS Parser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-imu-parser" class="md-nav__link">
+    3.3. IMU Parser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-mapper" class="md-nav__link">
+    3.4. Mapper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -412,7 +611,94 @@
         <p class="page-description">The main work of data process</p>
         <br>
         <hr>
-        
+        <h2 id="1-the-mapping-package">1. The mapping package<a class="headerlink" href="#1-the-mapping-package" title="Permanent link">⚓︎</a></h2>
+<p>Check out the source code from GitHub:</p>
+<div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/vuquangtrong/lidar-mapping-poc.git
+<span class="nb">cd</span> lidar-mapping-poc
+</code></pre></div>
+<p>The folder structure is as below:</p>
+<div class="highlight"><pre><span></span><code>.
+├─ docs     # the documents in HTML format
+│ └─ pdf    # the documents in PDF format
+├─ packages # Libraries of peripherals
+├─ base     # Base controller source code
+└─ rover    # Rover ROS package
+  └─ src    # Rover packages source code
+</code></pre></div>
+<p>Build the system:</p>
+<div class="highlight"><pre><span></span><code>./build.sh
+</code></pre></div>
+<h2 id="2-controllers">2. Controllers<a class="headerlink" href="#2-controllers" title="Permanent link">⚓︎</a></h2>
+<p>Controllers run at startup and configure attached modules including GNSS, RF24 and OLED.</p>
+<h3 id="21-base-controller">2.1. Base Controller<a class="headerlink" href="#21-base-controller" title="Permanent link">⚓︎</a></h3>
+<p>Base controller runs 2 threads:</p>
+<p><strong>Data Forwarding Thread</strong></p>
+<ol>
+<li>
+<p>Open the serial port at <code>/dev/ttyS0</code> which connects to the GNSS module</p>
+</li>
+<li>
+<p>Set GNSS module in base mode</p>
+</li>
+<li>
+<p>Set config to produce different RTCM message types</p>
+</li>
+<li>
+<p>Connect to RF24 radio module</p>
+</li>
+<li>
+<p>Set the radio on transmitting mode on the channel 100 (2500 Mhz), using the address <code>R0v3r</code></p>
+</li>
+<li>
+<p>In the forever loop, read RTCM data from serial port and send to radio</p>
+</li>
+</ol>
+<p><strong>System Status Thread</strong></p>
+<ol>
+<li>
+<p>Connect to OLED module</p>
+</li>
+<li>
+<p>In the forever loop, get data and print out status on screen</p>
+</li>
+</ol>
+<h3 id="22-rover-controller">2.2. Rover Controller<a class="headerlink" href="#22-rover-controller" title="Permanent link">⚓︎</a></h3>
+<p>Rover controller runs 2 threads:</p>
+<p><strong>Data Forwarding Thread</strong></p>
+<ol>
+<li>
+<p>Open the serial port at <code>/dev/ttyTHS1</code> which connects to the GNSS module</p>
+</li>
+<li>
+<p>Set GNSS module in rover mode</p>
+</li>
+<li>
+<p>Set config to produce <code>GNGGA</code> message on COM2 and <code>GPRMC</code> messages on COM3</p>
+</li>
+<li>
+<p>Connect to RF24 radio module</p>
+</li>
+<li>
+<p>Set the radio on receiving mode on the channel 100 (2500 Mhz), using the address <code>R0v3r</code></p>
+</li>
+<li>
+<p>In the forever loop, read RTCM data from radio and send to serial port</p>
+</li>
+</ol>
+<p><strong>System Status Thread</strong></p>
+<ol>
+<li>
+<p>Connect to OLED module</p>
+</li>
+<li>
+<p>In the forever loop, get data and print out status on screen</p>
+</li>
+</ol>
+<h2 id="3-ros-packages">3. ROS packages<a class="headerlink" href="#3-ros-packages" title="Permanent link">⚓︎</a></h2>
+<h3 id="31-livox-driver">3.1. Livox Driver<a class="headerlink" href="#31-livox-driver" title="Permanent link">⚓︎</a></h3>
+<h3 id="32-gnss-parser">3.2. GNSS Parser<a class="headerlink" href="#32-gnss-parser" title="Permanent link">⚓︎</a></h3>
+<h3 id="33-imu-parser">3.3. IMU Parser<a class="headerlink" href="#33-imu-parser" title="Permanent link">⚓︎</a></h3>
+<h3 id="34-mapper">3.4. Mapper<a class="headerlink" href="#34-mapper" title="Permanent link">⚓︎</a></h3>
     
 
               
@@ -437,7 +723,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../base/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Base station" rel="prev">
+        <a href="../rover/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rover" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -446,7 +732,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Base station
+              Rover
             </div>
           </div>
         </a>
@@ -512,10 +798,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
         <script src="../assets/view-bigimg.js"></script>
       
